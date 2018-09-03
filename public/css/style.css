@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+nav {
+    color: #4d4d4d;
+}
+
+section nav ul li:first-child {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+#hero {
+    width: 100%;
+    text-align: center;
+    padding: 25% 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.signUp {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Footer */
+
+footer .footer-cols {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+}
+
+footer ul li:first-child {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+}
