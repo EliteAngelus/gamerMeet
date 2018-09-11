@@ -10,6 +10,7 @@
 
 html {
     height: 100%;
+    font-size: 18px;
 }
 
 body {
@@ -52,7 +53,7 @@ section nav ul li:first-child {
     padding: 0;
     text-shadow: 1px 1px 10px black;
     margin: 0;
-    background: url('../img/video.jpg') center/cover;
+    background: url(../img/video.jpg) center/288%;
     text-align: center;
     padding: 40% 0px;
     margin: 0;
@@ -68,6 +69,17 @@ h1 {
 
 h1 p {
     font-family: 'Acme', sans-serif;
+}
+
+
+/* SURVER */
+
+strong {
+    font-size: 0.8rem;
+}
+
+.questions {
+    font-size: 0.8rem;
 }
 
 
@@ -110,7 +122,6 @@ ul {
 
 .form-wrap {
     width: 98%;
-    height: 12rem;
     padding: 4px 3px;
     opacity: 0.9;
 }
