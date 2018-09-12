@@ -54,6 +54,7 @@ section nav ul li:first-child {
     text-shadow: 1px 1px 10px black;
     margin: 0;
     background: url(../img/video.jpg) center/288%;
+    background-attachment: fixed;
     text-align: center;
     padding: 40% 0px;
     margin: 0;
