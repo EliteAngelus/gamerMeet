@@ -36,6 +36,11 @@ nav {
     position: sticky;
     top: 0%;
     background: url(../img/3px-tile.png), linear-gradient(to right, #2c2626, #24247c);
+    text-shadow: 0px 0px 20px black;
+}
+
+nav a {
+    color: whitesmoke;
 }
 
 section nav ul li:first-child {
@@ -86,6 +91,57 @@ h1 p {
     font-family: 'Acme', sans-serif;
 }
 
+#featured {
+    background: url('../img/3px-tile.png'), #5f5e5e;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto 1fr 1fr;
+    margin: 0.4rem;
+    padding: .2rem;
+    border-radius: .4rem;
+    box-shadow: 0 0 20px 0px #000000a6;
+}
+
+#featured h3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    padding: 0.4rem;
+}
+
+#featured .group-cards {
+    color: white;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
+    grid-gap: .4rem;
+    margin-bottom: 1%;
+}
+
+#featured .group-card {
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+}
+
+#featured .group-card .group-card-title {
+    background: url('../img/3px-tile.png'), black;
+    color: white;
+    text-shadow: 1px 1px 20px black;
+    text-align: center;
+}
+
+#featured .group-card .group-card-image {
+    width: 100%;
+}
+
 
 /* SURVER */
 
@@ -103,9 +159,12 @@ strong {
 .signUp {
     margin-top: 10px;
     display: inline-block;
-    padding: 1rem;
+    padding: 0.6rem;
     color: #fff;
     background-color: #24247c;
+    border-radius: 0.4rem;
+    border: 2px solid #3838b0;
+    text-decoration: none;
 }
 
 .signUp:hover {
