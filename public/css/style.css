@@ -279,6 +279,14 @@ ul {
     grid-row-end: 3;
 }
 
+.survey-content {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+	grid-row-end: 3;
+	z-index: 10;
+}
+
 input {
 	padding: 6px 20px;
 	padding-bottom: 6px;
