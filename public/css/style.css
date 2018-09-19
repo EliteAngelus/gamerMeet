@@ -233,7 +233,7 @@ strong {
 	background-color: #143f85;
 }
 
-#hero .screen {
+.screen {
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -255,10 +255,28 @@ ul {
    
 } */
 
+#sign-up {
+	color: white;
+	padding: 0;
+	text-shadow: 1px 1px 20px black;
+	margin: 0;
+	background: url(../img/video.jpg) top/220%;
+	/* background-attachment: fixed; */
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 5vh 1fr 5vh;
+	position: relative;
+}
+
 .form-wrap {
 	width: 98%;
 	padding: 4px 3px;
 	opacity: 0.9;
+	grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 input {
