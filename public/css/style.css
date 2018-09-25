@@ -279,13 +279,7 @@ ul {
     grid-row-end: 3;
 }
 
-.survey-content {
-	grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-	grid-row-end: 3;
-	z-index: 10;
-}
+
 
 input {
 	padding: 6px 20px;
@@ -303,6 +297,105 @@ input {
     margin-bottom: 20px;
     font-size: 16px;
 } */
+
+#survey {
+	color: white;
+	padding: 0;
+	text-shadow: 1px 1px 20px black;
+	margin: 0;
+	background: url(../img/video.jpg) top/220%;
+	/* background-attachment: fixed; */
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	position: relative;
+}
+
+#survey .survey-content {
+	grid-column-start: 1;
+    grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	z-index: 10;
+}
+
+#survey .question-card {
+	background: black;
+	grid-column-start: 1;
+    grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
+#survey .question-card-top {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	position: relative;
+}
+
+#survey .question-card-top .question-title {
+	border: 0.4rem solid white;
+    border-top-right-radius: .5rem;
+    position: absolute;
+    background: black;
+    padding: 0.2rem;
+    bottom: 0;
+}
+
+#survey .question-card .question-image {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    width: calc(100% - .8rem);
+    border: .4rem solid white;
+    border-top-right-radius: 0.4rem;
+}
+
+#survey .question-card .question-card-bottom {
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+#survey .question-card .question-card-bottom .question-card-question {
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+#survey .question-card .question-card-bottom .question-card-options {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: .2rem;
+}
+
+#survey .question-card .question-card-bottom .question-card-option {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: 1fr 1fr 10%;
+	grid-template-rows: 1fr;
+	border: .1rem solid white;
+    border-top-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+}
+
+#survey .question-card-option input {
+ opacity: 1;
+}
+
+#survey .question-card-option input:checked {
+	background: green;
+}
+
+#survey .question-card-option-text {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
 
 /* Footer */
 
