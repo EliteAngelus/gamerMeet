@@ -364,6 +364,7 @@ input {
 #survey .question-card .question-card-bottom .question-card-question {
 	grid-column-start: 1;
 	grid-column-end: 4;
+	padding: .4rem;
 }
 
 #survey .question-card .question-card-bottom .question-card-options {
@@ -377,18 +378,27 @@ input {
 	grid-column-start: 1;
 	grid-column-end: 4;
 	display: grid;
-	grid-template-columns: 1fr 1fr 10%;
+	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 	border: .1rem solid white;
     border-top-right-radius: .5rem;
-    border-bottom-left-radius: .5rem;
+	border-bottom-left-radius: .5rem;
+	overflow: hidden;
 }
+
+#survey .question-card .question-card-bottom .question-card-option:hover {
+	background: rgb(27, 27, 27);
+}	
 
 #survey .question-card-option input {
- opacity: 1;
+ 	display: none;
 }
 
-#survey .question-card-option input:checked {
+#survey .question-card-option label {
+	padding: .5rem;
+}
+
+#survey .question-card-option input:checked ~ label {
 	background: green;
 }
 
