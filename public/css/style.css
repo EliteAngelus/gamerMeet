@@ -63,6 +63,13 @@ nav ul li:first-child {
 
 /* SECTION */
 
+.section-grid {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
 #hero {
 	color: white;
 	padding: 0;
@@ -107,7 +114,7 @@ h1 p {
 #featured {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: auto 1fr 1fr;
+	grid-template-rows: auto;
 }
 
 #featured h3 {
@@ -157,21 +164,27 @@ h1 p {
 #find {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto auto 1fr;
+	grid-template-rows: auto;
 }
 
 #find h3 {
-    padding: 0.4rem;
+	padding: 0.4rem;
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
 
 .catagories {
+	grid-column-start: 1;
+	grid-column-end: 4;
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
 	grid-gap: 0.25rem;
 }
 
 .catagories .catagory-card {
+	grid-column-start: 1;
+    grid-column-end: 4;
 	color: white;
 	border: 2px solid white;
 	border-radius: 0.3rem;
@@ -204,6 +217,17 @@ h1 p {
 
 .locations {
 	display: grid;
+}
+
+.more-card {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    text-align: center;
+    border: 0.1rem solid white;
+	border-radius: 0.2rem;
+	padding: .4rem;
+    margin: .4rem;
 }
 
 /* SURVER */
