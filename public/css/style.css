@@ -227,7 +227,8 @@ h1 p {
     border: 0.1rem solid white;
 	border-radius: 0.2rem;
 	padding: .4rem;
-    margin: .4rem;
+	margin: .4rem;
+	background: url(../img/3px-tile.png), black;
 }
 
 /* SURVER */
