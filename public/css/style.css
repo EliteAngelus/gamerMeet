@@ -14,7 +14,6 @@ html {
 }
 
 body {
-<<<<<<< HEAD
 	position: relative;
 	min-height: 100%;
 	display: grid;
@@ -31,13 +30,6 @@ body {
 			hsla(241, 30%, 10%, 1)
 		);
 	background-size: 60%, 100%;
-=======
-    position: relative;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    background: url("../img/3px-tile.png"), linear-gradient(to right, #2c2626, #080848);
->>>>>>> jefe
 }
 
 #body {
@@ -48,7 +40,6 @@ body {
 /* NAV */
 
 nav {
-<<<<<<< HEAD
 	/* background-color: ; */
 	color: #ffffff;
 	font-family: "Shadows Into Light", cursive;
@@ -70,18 +61,6 @@ nav {
 	text-shadow: 0px 2px 0px black, 0 -2px 0 black;
 	padding: 0.5rem;
 	z-index: 1000;
-=======
-    /* background-color: ; */
-    color: #ffffff;
-    font-family: "Shadows Into Light", cursive;
-    box-shadow: 0px 0px 20px 0px black;
-    position: sticky;
-    top: 0%;
-    background: url(../img/3px-tile.png), linear-gradient(to right, #2c2626, #080848);
-    text-shadow: 0px 2px 0px black, 0 -2px 0 black;
-    padding: 0.5rem;
-    z-index: 1000;
->>>>>>> jefe
 }
 
 nav li {
@@ -146,7 +125,6 @@ h1 p {
 }
 
 .content-section {
-<<<<<<< HEAD
 	grid-column-start: 1;
 	grid-column-end: 4;
 	background: url("../img/3px-tile.png"), #5f5e5e;
@@ -162,20 +140,6 @@ h1 p {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
-=======
-    background: url("../img/3px-tile.png"), #5f5e5e;
-    color: white;
-    margin: 0.4rem;
-    padding: 0.2rem;
-    border-radius: 0.4rem;
-    box-shadow: 0 0 20px 0px #000000a6;
-}
-
-#featured {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 1fr 1fr;
->>>>>>> jefe
 }
 
 #featured h3 {
@@ -208,7 +172,6 @@ h1 p {
 }
 
 #featured .group-card .group-card-title {
-<<<<<<< HEAD
 	background: url("../img/3px-tile.png"), black;
 	color: white;
 	text-shadow: 1px 1px 20px black;
@@ -217,16 +180,6 @@ h1 p {
 	bottom: 0;
 	width: 100%;
 	z-index: 30;
-=======
-    background: url("../img/3px-tile.png"), black;
-    color: white;
-    text-shadow: 1px 1px 20px black;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 30;
->>>>>>> jefe
 }
 
 #featured .group-card .group-card-image {
@@ -234,15 +187,9 @@ h1 p {
 }
 
 #find {
-<<<<<<< HEAD
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
-=======
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto auto 1fr;
->>>>>>> jefe
 }
 
 #find h3 {
@@ -252,7 +199,6 @@ h1 p {
 }
 
 .catagories {
-<<<<<<< HEAD
 	grid-column-start: 1;
 	grid-column-end: 4;
 	display: grid;
@@ -280,31 +226,6 @@ h1 p {
 	transform: skewX(-36deg);
 	z-index: 10;
 	background: url("../img/3px-tile.png"), black;
-=======
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: 0.25rem;
-}
-
-.catagories .catagory-card {
-    color: white;
-    border: 2px solid white;
-    border-radius: 0.3rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    background: url("../img/3px-tile.png"), black;
-    position: relative;
-    overflow: hidden;
-}
-
-.catagories .catagory-card .catagory-card-title {
-    border-right: 0.05rem solid;
-    transform: skewX(-36deg);
-    z-index: 10;
-    background: url("../img/3px-tile.png"), black;
->>>>>>> jefe
 }
 
 .catagories .catagory-card .catagory-card-title .card-text {
@@ -323,7 +244,6 @@ h1 p {
     display: grid;
 }
 
-<<<<<<< HEAD
 .more-card {
 	grid-column-start: 1;
 	grid-column-end: 4;
@@ -335,8 +255,6 @@ h1 p {
 	margin: 0.4rem;
 	background: url(../img/3px-tile.png), black;
 }
-=======
->>>>>>> jefe
 
 /* SURVER */
 
@@ -405,7 +323,6 @@ ul {
 }
 
 .form-wrap {
-<<<<<<< HEAD
 	width: 98%;
 	padding: 4px 3px;
 	opacity: 0.9;
@@ -413,15 +330,6 @@ ul {
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 3;
-=======
-    width: 98%;
-    padding: 4px 3px;
-    opacity: 0.9;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
->>>>>>> jefe
 }
 
 input {
@@ -442,7 +350,6 @@ input {
     font-size: 16px;
 } */
 
-<<<<<<< HEAD
 #survey {
 	color: white;
 	padding: 0;
@@ -551,8 +458,6 @@ input {
 	grid-column-start: 1;
 	grid-column-end: 3;
 }
-=======
->>>>>>> jefe
 
 /* Footer */
 footer {
