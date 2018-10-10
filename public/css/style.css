@@ -17,9 +17,19 @@ body {
 	position: relative;
 	min-height: 100%;
 	display: grid;
-	grid-template-rows: 1fr auto;
-	background: url("../img/3px-tile.png"),
-		linear-gradient(to right, #2c2626, #080848);
+	grid-template-rows: auto 1fr auto;
+	/* background: url("../img/3px-tile.png"),
+		linear-gradient(to right, #2c2626, #080848); */
+	background: url(../img/3px-tile.png),
+		linear-gradient(
+			to right,
+			hsla(241, 30%, 10%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(241, 30%, 10%, 1)
+		);
+	background-size: 60%, 100%;
 }
 
 #body {
@@ -35,8 +45,18 @@ nav {
 	box-shadow: 0px 0px 20px 0px black;
 	position: sticky;
 	top: 0%;
+	/* background: url(../img/3px-tile.png),
+		linear-gradient(to right, #2c2626, #080848); */
 	background: url(../img/3px-tile.png),
-		linear-gradient(to right, #2c2626, #080848);
+		linear-gradient(
+			to right,
+			hsla(241, 30%, 10%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(240, 75%, 16%, 1),
+			hsla(241, 30%, 10%, 1)
+		);
+	background-size: 60%, 100%;
 	text-shadow: 0px 2px 0px black, 0 -2px 0 black;
 	padding: 0.5rem;
 	z-index: 1000;
@@ -103,12 +123,15 @@ h1 p {
 }
 
 .content-section {
+	grid-column-start: 1;
+	grid-column-end: 4;
 	background: url("../img/3px-tile.png"), #5f5e5e;
 	color: white;
 	margin: 0.4rem;
 	padding: 0.2rem;
 	border-radius: 0.4rem;
 	box-shadow: 0 0 20px 0px #000000a6;
+	z-index: 10;
 }
 
 #featured {
@@ -152,9 +175,9 @@ h1 p {
 	text-shadow: 1px 1px 20px black;
 	text-align: center;
 	position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 30;
+	bottom: 0;
+	width: 100%;
+	z-index: 30;
 }
 
 #featured .group-card .group-card-image {
@@ -184,35 +207,35 @@ h1 p {
 
 .catagories .catagory-card {
 	grid-column-start: 1;
-    grid-column-end: 4;
+	grid-column-end: 4;
 	color: white;
 	border: 2px solid white;
 	border-radius: 0.3rem;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-template-rows: 1fr;
-    background: url("../img/3px-tile.png"), black;
-    position: relative;
-    overflow: hidden;
+	background: url("../img/3px-tile.png"), black;
+	position: relative;
+	overflow: hidden;
 }
 
 .catagories .catagory-card .catagory-card-title {
 	border-right: 0.05rem solid;
-    transform: skewX(-36deg);
-    z-index: 10;
-    background: url("../img/3px-tile.png"), black;
+	transform: skewX(-36deg);
+	z-index: 10;
+	background: url("../img/3px-tile.png"), black;
 }
 
 .catagories .catagory-card .catagory-card-title .card-text {
-    transform: skewX(36deg);
-    padding: 0.5rem;
+	transform: skewX(36deg);
+	padding: 0.5rem;
 }
 
 .catagories .catagory-card .catagory-card-image {
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    left: 30%;
+	position: absolute;
+	width: 70%;
+	height: 100%;
+	left: 30%;
 }
 
 .locations {
@@ -221,13 +244,13 @@ h1 p {
 
 .more-card {
 	grid-column-start: 1;
-    grid-column-end: 4;
-    display: grid;
-    text-align: center;
-    border: 0.1rem solid white;
+	grid-column-end: 4;
+	display: grid;
+	text-align: center;
+	border: 0.1rem solid white;
 	border-radius: 0.2rem;
-	padding: .4rem;
-	margin: .4rem;
+	padding: 0.4rem;
+	margin: 0.4rem;
 	background: url(../img/3px-tile.png), black;
 }
 
@@ -299,12 +322,10 @@ ul {
 	padding: 4px 3px;
 	opacity: 0.9;
 	grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	grid-row-end: 3;
 }
-
-
 
 input {
 	padding: 6px 20px;
@@ -339,7 +360,7 @@ input {
 
 #survey .survey-content {
 	grid-column-start: 1;
-    grid-column-end: 4;
+	grid-column-end: 4;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
@@ -349,7 +370,7 @@ input {
 #survey .question-card {
 	background: black;
 	grid-column-start: 1;
-    grid-column-end: 4;
+	grid-column-end: 4;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
@@ -366,19 +387,19 @@ input {
 
 #survey .question-card-top .question-title {
 	border: 0.4rem solid white;
-    border-top-right-radius: .5rem;
-    position: absolute;
-    background: black;
-    padding: 0.2rem;
-    bottom: 0;
+	border-top-right-radius: 0.5rem;
+	position: absolute;
+	background: black;
+	padding: 0.2rem;
+	bottom: 0;
 }
 
 #survey .question-card .question-image {
 	grid-column-start: 1;
-    grid-column-end: 4;
-    width: calc(100% - .8rem);
-    border: .4rem solid white;
-    border-top-right-radius: 0.4rem;
+	grid-column-end: 4;
+	width: calc(100% - 0.8rem);
+	border: 0.4rem solid white;
+	border-top-right-radius: 0.4rem;
 }
 
 #survey .question-card .question-card-bottom {
@@ -389,14 +410,14 @@ input {
 #survey .question-card .question-card-bottom .question-card-question {
 	grid-column-start: 1;
 	grid-column-end: 4;
-	padding: .4rem;
+	padding: 0.4rem;
 }
 
 #survey .question-card .question-card-bottom .question-card-options {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(5, 1fr);
-	grid-gap: .2rem;
+	grid-gap: 0.2rem;
 }
 
 #survey .question-card .question-card-bottom .question-card-option {
@@ -405,22 +426,22 @@ input {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
-	border: .1rem solid white;
-    border-top-right-radius: .5rem;
-	border-bottom-left-radius: .5rem;
+	border: 0.1rem solid white;
+	border-top-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
 	overflow: hidden;
 }
 
 #survey .question-card .question-card-bottom .question-card-option:hover {
 	background: rgb(27, 27, 27);
-}	
+}
 
 #survey .question-card-option input {
- 	display: none;
+	display: none;
 }
 
 #survey .question-card-option label {
-	padding: .5rem;
+	padding: 0.5rem;
 }
 
 #survey .question-card-option input:checked ~ label {
@@ -433,6 +454,9 @@ input {
 }
 
 /* Footer */
+footer {
+	box-shadow: 0px 5px 20px black;
+}
 
 footer .footer-cols {
 	/* background-color: #2c2626; */
