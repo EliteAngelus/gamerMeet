@@ -1,26 +1,28 @@
 // Dependencies 
 const express = require('express');
-
 const bodyparser = require('body-parser');
-
 const path = require('path');
+const mysql = require('mysql');
 
 const app = express();
 
-const mysql = require('mysql');
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'gamerData'
-});
+app.set('views', './views');
+app.set('view engine', 'pug');
 
-connection.connect();
 
-connection.query('SELECT * from userInfo', function(error, results, fields) {
-    if (error) throw error;
-    console.log('The solution is: ', results[0]);
-});
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     database: 'gamerData'
+// });
+
+// connection.connect();
+
+// connection.query('SELECT * from userInfo', function(error, results, fields) {
+//     if (error) throw error;
+//     console.log('The solution is: ', results[0]);
+// });
 
 // ===DATA BASE====
 // First Name 
@@ -48,6 +50,10 @@ app.get("/signup", function(req, res) {
 
 app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/survey.html"))
+})
+
+app.get('/test', (req,res) => {
+    res.render('index', {title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris'})
 })
 
 
