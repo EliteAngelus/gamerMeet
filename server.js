@@ -9,6 +9,14 @@ const app = express();
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+const testData = {
+    title: 'Testing out PUG',
+    message: 'Pug is pretty cool.',
+    name: 'Chris',
+    isAuthed: false,
+    numberArray: [1,2,3,4,1,2,3,4],
+    colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
+}
 
 // const connection = mysql.createConnection({
 //     host: 'localhost',
@@ -53,7 +61,7 @@ app.get("/survey", function(req, res) {
 })
 
 app.get('/test', (req,res) => {
-    res.render('index', {title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris'})
+    res.render('blocks/home', testData);
 })
 
 
