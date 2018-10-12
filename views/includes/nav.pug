@@ -1,4 +1,8 @@
 nav
     ul
         li Gamer's MeetUp
-        li#Login: a(href="#") Login
+        if isAuthed
+            li#Login: a(href="#") #{name}
+        else
+            li#Login: a(href="#") Login
+        

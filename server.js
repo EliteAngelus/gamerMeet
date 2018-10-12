@@ -9,7 +9,16 @@ const app = express();
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-const testData = {
+const authTestData = {
+    title: 'Testing out PUG',
+    message: 'Pug is pretty cool.',
+    name: 'Chris',
+    isAuthed: true,
+    numberArray: [1,2,3,4,1,2,3,4],
+    colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
+}
+
+const nonAuthTestData = {
     title: 'Testing out PUG',
     message: 'Pug is pretty cool.',
     name: 'Chris',
@@ -61,21 +70,47 @@ app.get("/survey", function(req, res) {
 })
 
 // PUG testing routes
+// ------------------------------------------------
 app.get('/test/home', (req,res) => {
-    res.render('blocks/home', testData);
+    if (req.query.auth){
+        res.render('blocks/home', authTestData);
+    }
+    else {
+        res.render('blocks/home', nonAuthTestData);
+    }
+    
 })
 
 app.get('/test/signup', (req,res) => {
-    res.render('blocks/signup', testData);
+    if (req.query.auth){
+        res.render('blocks/signup', authTestData);
+    }
+    else {
+        res.render('blocks/signup', nonAuthTestData);
+    }
+    
 })
 
 app.get('/test/signin', (req,res) => {
-    res.render('blocks/signin', testData);
+    if (req.query.auth){
+        res.render('blocks/signin', authTestData);
+    }
+    else {
+        res.render('blocks/signin', nonAuthTestData);
+    }
+    
 })
 
 app.get('/test/dashboard', (req,res) => {
-    res.render('blocks/dashboard', testData);
+    if (req.query.auth){
+        res.render('blocks/dashboard', authTestData);
+    }
+    else {
+        res.render('blocks/dashboard', nonAuthTestData);
+    }
+    
 })
+// --------------------------------------------------
 
 
 app.post("/signup", function(req, res) {
