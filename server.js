@@ -60,8 +60,21 @@ app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/survey.html"))
 })
 
-app.get('/test', (req,res) => {
+// PUG testing routes
+app.get('/test/home', (req,res) => {
     res.render('blocks/home', testData);
+})
+
+app.get('/test/signup', (req,res) => {
+    res.render('blocks/signup', testData);
+})
+
+app.get('/test/signin', (req,res) => {
+    res.render('blocks/signin', testData);
+})
+
+app.get('/test/dashboard', (req,res) => {
+    res.render('blocks/dashboard', testData);
 })
 
 
