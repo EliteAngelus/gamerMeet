@@ -1,8 +1,7 @@
 nav
-    ul
-        li Gamer's MeetUp
-        if isAuthed
-            li#Login: a(href="#") #{name}
-        else
-            li#Login: a(href="#") Login
+    a#logo(href="/"): h2 Gamer's MeetUp
+    if isAuthed
+        a#menu(href="#"): p #{name}
+    else
+        a#menu(href="#"): p Login
         

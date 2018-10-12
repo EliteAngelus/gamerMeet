@@ -1,8 +1,8 @@
+/* Font Imports */
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
 @import url("https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light");
 
-/* CSS VARIABLES */
-
+/* TEMPLATE Styles */
 * {
     padding: 0;
     margin: 0;
@@ -18,8 +18,6 @@ body {
 	min-height: 100%;
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	/* background: url("../img/3px-tile.png"),
-		linear-gradient(to right, #2c2626, #080848); */
 	background: url(../img/3px-tile.png),
 		linear-gradient(
 			to right,
@@ -30,10 +28,6 @@ body {
 			hsla(241, 30%, 10%, 1)
 		);
 	background-size: 60%, 100%;
-}
-
-#body {
-    position: relative;
 }
 
 .container {
@@ -41,17 +35,15 @@ body {
 }
 
 
-/* NAV */
+/* NAV  Styles */
 
 nav {
-	/* background-color: ; */
-	color: #ffffff;
-	font-family: "Shadows Into Light", cursive;
-	box-shadow: 0px 0px 20px 0px black;
 	position: sticky;
 	top: 0%;
-	/* background: url(../img/3px-tile.png),
-		linear-gradient(to right, #2c2626, #080848); */
+	padding: 0.5rem;
+	color: #ffffff;
+	font-family: "Shadows Into Light", cursive;
+	text-shadow: 0px 2px 0px black, 0 -2px 0 black;
 	background: url(../img/3px-tile.png),
 		linear-gradient(
 			to right,
@@ -62,29 +54,42 @@ nav {
 			hsla(241, 30%, 10%, 1)
 		);
 	background-size: 60%, 100%;
-	text-shadow: 0px 2px 0px black, 0 -2px 0 black;
-	padding: 0.5rem;
+	box-shadow: 0px 0px 20px 0px black;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
 	z-index: 1000;
-}
-
-nav li {
-    display: inline-block;
 }
 
 nav a {
     color: whitesmoke;
-    text-decoration: none;
+	text-decoration: none;
 }
 
-nav ul li:first-child {
-    font-size: 1.5rem;
-    display: inline-block;
+nav #logo {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	margin-left: .5rem;s
 }
 
-#Login {
-    float: right;
-    padding: 0.4rem;
+nav #menu {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 0.5rem;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* SECTION */
@@ -288,12 +293,7 @@ strong {
     background-color: #143f85;
 }
 
-.screen {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background: rgba(28, 28, 28, 0.3);
-}
+
 
 ul {
     list-style: none;

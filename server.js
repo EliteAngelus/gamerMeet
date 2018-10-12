@@ -13,6 +13,7 @@ const authTestData = {
     title: 'Testing out PUG',
     message: 'Pug is pretty cool.',
     name: 'Chris',
+    profileImage: 'test-profile-pic.png',
     isAuthed: true,
     numberArray: [1,2,3,4,1,2,3,4],
     colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
