@@ -1,11 +1,29 @@
 // Dependencies 
 const express = require('express');
-
 const bodyparser = require('body-parser');
-
 const path = require('path');
+const mysql = require('mysql');
 
 const app = express();
+
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     database: 'gamerData'
+// });
+
+// connection.connect();
+
+// connection.query('SELECT * from userInfo', function(error, results, fields) {
+//     if (error) throw error;
+//     console.log('The solution is: ', results[0]);
+// });
+
 // ===DATA BASE====
 // First Name 
 // Last Name 
@@ -32,6 +50,21 @@ app.get("/signup", function(req, res) {
 
 app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/survey.html"))
+})
+
+app.get('/test', (req,res) => {
+    res.render('index', {title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris'})
+})
+
+
+app.post("/signup", function(req, res) {
+
+    console.log(req.body);
+
+    connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
+        if (error) throw error;
+        console.log('The solution is: ', results[0]);
+    });
 })
 
 // PORT
