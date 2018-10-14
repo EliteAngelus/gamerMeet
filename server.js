@@ -12,7 +12,29 @@ app.set('view engine', 'pug');
 const authTestData = {
     title: 'Testing out PUG',
     message: 'Pug is pretty cool.',
+    user: {
+        username: 'CXL',
+        profileImageLocation: '/img/',
+        profileImage: 'test-profile-pic.png',
+        joinDate: '10/10/2018',
+        lastActive: 'Today',
+        groups: [
+            {
+                name: 'Skyrim in Seattle',
+                id: 1,
+            },
+            {
+                name: 'Tri-Force Heros',
+                id: 2,
+            },
+            {
+                name: 'Not Even Our Final Form',
+                id: 3,
+            }
+        ]
+    },
     name: 'Chris',
+    profileImageLocation: '/img/',
     profileImage: 'test-profile-pic.png',
     isAuthed: true,
     numberArray: [1,2,3,4,1,2,3,4],
@@ -42,37 +64,18 @@ const nonAuthTestData = {
 //     console.log('The solution is: ', results[0]);
 // });
 
-// ===DATA BASE====
-// First Name 
-// Last Name 
-// Username 
-// Email 
-// Password 
 
-app.use(express.static('public'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up the Express app to Handle data parsing 
 
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
-//Routes Handling 
-
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"))
-})
-
-app.get("/signup", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/signup.html"))
-})
-
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/survey.html"))
-})
-
-// PUG testing routes
+// Routes Handling
 // ------------------------------------------------
-app.get('/test/home', (req,res) => {
+app.get('/', (req,res) => {
     if (req.query.auth){
         res.render('blocks/home', authTestData);
     }
@@ -82,7 +85,7 @@ app.get('/test/home', (req,res) => {
     
 })
 
-app.get('/test/signup', (req,res) => {
+app.get('/signup', (req,res) => {
     if (req.query.auth){
         res.render('blocks/signup', authTestData);
     }
@@ -92,7 +95,7 @@ app.get('/test/signup', (req,res) => {
     
 })
 
-app.get('/test/signin', (req,res) => {
+app.get('/signin', (req,res) => {
     if (req.query.auth){
         res.render('blocks/signin', authTestData);
     }
@@ -102,12 +105,22 @@ app.get('/test/signin', (req,res) => {
     
 })
 
-app.get('/test/dashboard', (req,res) => {
+app.get('/dashboard', (req,res) => {
     if (req.query.auth){
         res.render('blocks/dashboard', authTestData);
     }
     else {
         res.render('blocks/dashboard', nonAuthTestData);
+    }
+    
+})
+
+app.get('/user-profile', (req,res) => {
+    if (req.query.auth){
+        res.render('blocks/user-profile', authTestData);
+    }
+    else {
+        res.render('blocks/user-profile', nonAuthTestData);
     }
     
 })
