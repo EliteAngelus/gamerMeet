@@ -2,6 +2,19 @@
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
 @import url("https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light");
 
+/* Color Palette */
+/* 
+ * Primary - FFC138
+ * Accent1 - 34399F
+ * Accent2 - 141B9F
+ *
+ * Complimentary1 - 043FB2
+ * Complimentary2 - 387CFF
+ *
+ * White - fcfdff
+ * Black - 091436
+*/
+
 /* TEMPLATE Styles */
 * {
     padding: 0;
@@ -17,21 +30,33 @@ body {
 	position: relative;
 	min-height: 100%;
 	display: grid;
-	grid-template-rows: auto 1fr auto;
-	background: url(../img/3px-tile.png),
-		linear-gradient(
-			to right,
-			hsla(241, 30%, 10%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(241, 30%, 10%, 1)
-		);
-	background-size: 60%, 100%;
+	grid-template-rows: auto 1fr auto;	
 }
 
 .container {
 	position: relative;
+	margin-top: -.5rem;
+}
+
+.background-main {
+	background: linear-gradient(#284391, #050a18);
+	background-attachment: fixed;
+	color: #091436;
+}
+
+.background-primary {
+	background: #141B9F;
+	color: #091436;
+}
+
+.background-dark {
+	background: url(/img/3px-tile.png), #000336;
+	color: #091436;
+}
+
+.background-light {
+	background: #eff3ff;
+	color: #091436;
 }
 
 
@@ -41,20 +66,13 @@ nav {
 	position: sticky;
 	top: 0%;
 	padding: 0.5rem;
-	color: #ffffff;
 	font-family: "Shadows Into Light", cursive;
-	text-shadow: 0px 2px 0px black, 0 -2px 0 black;
-	background: url(../img/3px-tile.png),
-		linear-gradient(
-			to right,
-			hsla(241, 30%, 10%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(240, 75%, 16%, 1),
-			hsla(241, 30%, 10%, 1)
-		);
-	background-size: 60%, 100%;
-	box-shadow: 0px 0px 20px 0px black;
+	text-shadow: 0px 0px 10px black,
+		0px 0px 10px black,
+		0px 0px 10px black;
+	box-shadow: 0px 0px 20px 0px #00000033;
+	border-bottom-left-radius: .5rem;
+	border-bottom-right-radius: .5rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 1fr;
@@ -104,22 +122,30 @@ nav #menu {
 #hero {
     color: white;
     padding: 0;
-    text-shadow: 1px 1px 20px black;
+	text-shadow: 0px 0px 10px black,
+		0px 0px 10px black,
+		0px 0px 10px black,
+		0px 0px 10px black;
     margin: 0;
-    background: url(../img/video.jpg) top/220%;
+	background: url(/img/TFH_Three_Swords.png) center/cover, 
+		linear-gradient( #d2c11f5c, #00000000);
     /* background-attachment: fixed; */
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 20vh 1fr 20vh;
+    grid-template-rows: 25vh 25vh 1fr;
     position: relative;
 }
 
 .hero-content {
-    grid-column-start: 1;
+	grid-column-start: 1;
     grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0rem 0.4rem 0rem;
+    padding: 0.4rem;
+    border: .2rem solid whitesmoke;
+    background: #2315b457;
     z-index: 10;
 }
 
@@ -136,12 +162,12 @@ h1 p {
 .content-section {
 	grid-column-start: 1;
 	grid-column-end: 4;
-	background: url("../img/3px-tile.png"), #5f5e5e;
+	/* background: url("../img/3px-tile.png"), #5f5e5e; */
 	color: white;
-	margin: 0.4rem;
+	margin: 1rem 0;
 	padding: 0.2rem;
-	border-radius: 0.4rem;
-	box-shadow: 0 0 20px 0px #000000a6;
+	/* border-radius: 0.4rem; */
+	/* box-shadow: 0 0 20px 0px #000000a6; */
 	z-index: 10;
 }
 
@@ -279,14 +305,15 @@ strong {
 /* BUTTON */
 
 .signUp {
-    margin-top: 10px;
+    margin-top: 1rem;
     display: inline-block;
-    padding: 0.6rem;
+    padding: 0.4rem 4rem;
     color: #fff;
     background-color: #24247c;
     border-radius: 0.4rem;
     border: 2px solid #3838b0;
-    text-decoration: none;
+	text-decoration: none;
+	text-shadow: none;
 }
 
 .signUp:hover {
@@ -465,7 +492,9 @@ input {
 
 /* Footer */
 footer {
-	box-shadow: 0px 5px 20px black;
+	box-shadow: 0px 0px 20px -2px #00000033;
+	border-top-left-radius: .5rem;
+	border-top-right-radius: .5rem;
 }
 
 footer .footer-cols {
