@@ -1,0 +1,38 @@
+include mixins/number
+include mixins/isAuthed
+
+html
+  include includes/head
+  body(style={color:'white'})
+    h1= message
+    .container
+        +isAuthed(isAuthed)
+        h2 Hello #{name}
+        ul
+            li Number 1 
+            li Number 2
+        
+        .class
+            section#id.class
+            a(href="/home"): h1 Click on this link!
+
+            input(
+                value='something'
+                placeholder='something else'
+                id='input'
+            )
+
+        h1 Here's a looooooooooooooooooooooooooooooooooooo
+            | oooooooooooooooooooooooong line huh.
+
+        ul
+            each val in colorObject
+                +number(val)
+    
+        ol
+            each val in numberArray
+                +number(val)
+
+    include includes/footer
+
+

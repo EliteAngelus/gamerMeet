@@ -1,0 +1,49 @@
+extends ../template
+
+block content
+    section#hero
+        .hero-content
+            h1 It's dangerous to go alone.
+            h2 So don't!
+            a.signUp(href="/signup") Group Up
+
+    section#featured.content-section
+        h3 Group Highlights
+        .group-cards
+            .group-card
+                img.group-card-image(src="/img/skyrim-in-seattle-group-image.png")
+                .group-card-title Skyrim in Seattle
+            
+            .group-card
+                img.group-card-image(src="/img/tri-force-group-image.png")
+                .group-card-title Tri-Force Heros
+            
+            .group-card
+                img.group-card-image(src="/img/freeza-group-image.png")
+                .group-card-title Not Even Our Final Form
+            
+            .group-card
+                img.group-card-image(src="/img/freeza-group-image.png")
+                .group-card-title Not Even Our Final Form
+        
+        .more-card: p Browse More...
+
+    section#find.content-section
+        h3 Find Gamer's by catagory
+        .catagories
+            .catagory-card
+                .catagory-card-title
+                    .card-text Fighting
+                img.catagory-card-image(src="/img/fighting-cata-image.png")
+
+            .catagory-card
+                .catagory-card-title
+                    .card-text Party
+                img.catagory-card-image(src="/img/party-cata-image.png")
+
+            .catagory-card
+                .catagory-card-title
+                    .card-text MMO
+                img.catagory-card-image(src="/img/mmo-cata-image.png")
+
+        .more-card: p Browse More...
