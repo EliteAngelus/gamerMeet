@@ -31,6 +31,20 @@ const authTestData = {
                 name: 'Not Even Our Final Form',
                 id: 3,
             }
+        ],
+        friends: [
+            {
+                name: 'El Jefe',
+                id: 1
+            },
+            {
+                name: 'Simon Belmont',
+                id:2
+            },
+            {
+                name: 'Beerus Sucks',
+                id: 3
+            }
         ]
     },
     name: 'Chris',

@@ -2,58 +2,62 @@ extends ../template
 
 block content
     section#sign-up
-        .form-wrap
-            form(action="/signup", method="POST")
-                h1 Sign Up
-                input(
-                    type="text" 
-                    name="Username" 
-                    placeholder=" Username" 
-                    value="jazzyJeff"
-                )
-                br
+        form.form-wrap(action="/signup", method="POST")
+            h1 Sign Up
+            label(for="signup-username") Your Username
+            input(
+                id="signup-username"
+                type="text" 
+                name="username" 
+                placeholder=" username" 
+                value="jazzyJeff"
+            )
+            
+            //- label(for="signup-firstname") First name
+            //- input(
+            //-     id="signup-firstname"
+            //-     type="text" 
+            //-     name="firstname" 
+            //-     placeholder="First Name" 
+            //-     value="Jeff"
+            //- )
+            
+            //- label(for="signup-lastname") 
+            //- input(
+            //-     id="signup-lastname"
+            //-     type="text" 
+            //-     name="lastname" 
+            //-     placeholder="Last name" 
+            //-     value="Doe"
+            //- )
 
-                input(
-                    type="text" 
-                    name="firstname" 
-                    placeholder="First Name" 
-                    value="Jeff"
-                )
-                br
-                
-                input(
-                    type="text" 
-                    name="lastname" 
-                    placeholder="Last name" 
-                    value="Doe"
-                )
-                br
+            label(for="signup-email") Email address
+            input(
+                id="signup-email"
+                type="text" 
+                name="Email" 
+                placeholder="Email" 
+                value="jDoe@mgail.com"
+            )
 
-                input(
-                    type="text" 
-                    name="Email" 
-                    placeholder="Email" 
-                    value="jDoe@mgail.com"
-                )
-                br
+            label(for="signup-password") Password
+            input(
+                id="signup-password"
+                type="password" 
+                name="password" 
+                placeholder="Password" 
+                value="wordpass"
+            )
 
-                input(
-                    type="password" 
-                    name="password" 
-                    placeholder="Password" 
-                    value="wordpass"
-                )
-                br
-
-                input(
-                    type="password" 
-                    name="confirmpass" 
-                    placeholder="Confirm Password" 
-                    value="wordpass"
-                )
-                br
-
-                ul
-                    button(type="submit") Submit
+            label(for="signup-confirm-password") Confirm Password
+            input(
+                id="signup-confirm-password"
+                type="password" 
+                name="confirmpass" 
+                placeholder="Confirm Password" 
+                value="wordpass"
+            )
+            
+            button(type="submit") Submit
                 
         
