@@ -52,9 +52,25 @@ app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/survey.html"))
 })
 
-app.get('/test', (req,res) => {
-    res.render('index', {title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris'})
+app.get('/test', (req, res) => {
+    res.render('index', { title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris' })
 })
+
+app.get("/profile", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/user-profile.html"))
+})
+
+app.get("/dash", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/dashboard.html"))
+})
+
+app.get("/group", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/group-profile.html"))
+})
+app.get("/directory", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/group-dir.html"))
+})
+
 
 
 app.post("/signup", function(req, res) {
