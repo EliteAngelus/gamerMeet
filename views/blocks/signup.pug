@@ -1,0 +1,59 @@
+extends ../template
+
+block content
+    section#sign-up
+        .form-wrap
+            form(action="/signup", method="POST")
+                h1 Sign Up
+                input(
+                    type="text" 
+                    name="Username" 
+                    placeholder=" Username" 
+                    value="jazzyJeff"
+                )
+                br
+
+                input(
+                    type="text" 
+                    name="firstname" 
+                    placeholder="First Name" 
+                    value="Jeff"
+                )
+                br
+                
+                input(
+                    type="text" 
+                    name="lastname" 
+                    placeholder="Last name" 
+                    value="Doe"
+                )
+                br
+
+                input(
+                    type="text" 
+                    name="Email" 
+                    placeholder="Email" 
+                    value="jDoe@mgail.com"
+                )
+                br
+
+                input(
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    value="wordpass"
+                )
+                br
+
+                input(
+                    type="password" 
+                    name="confirmpass" 
+                    placeholder="Confirm Password" 
+                    value="wordpass"
+                )
+                br
+
+                ul
+                    button(type="submit") Submit
+                
+        

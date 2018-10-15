@@ -1,0 +1,23 @@
+extends ../template
+
+block content
+    section#sign-in.section-grid
+        .content-section
+            form.sign-in-form(action="", method="POST")
+                label(for="sign-in-username") Username: 
+                br
+                input#sign-in-username(
+                    type="text" 
+                    name="username" 
+                    placeholder="Username"
+                )
+                br
+
+                label(for="sign-in-password") Password: 
+                br
+                input#sign-in-password(
+                    type="password" 
+                    name="password" 
+                    placeholder="Password"
+                )
+                br
