@@ -625,7 +625,8 @@ ul {
 #account-options p {
 	text-align: center;
     padding: 0.7rem;
-    border: .4rem solid #00000042;
+	border: .4rem solid #00000042;
+	background: #0024ff1a;
 }
 
 
@@ -633,9 +634,112 @@ ul {
 
 
 
+/* USER-PROFILE Styles */
+#user-info {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	text-shadow: 0px 0px 20px black, 0px 0px 20px black;
+}
+
+.user-card {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+}
+
+.user-card img {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	padding: 1rem;
+	width: 10rem;
+}
+
+.user-card h3 {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	text-align: center;
+	background: url(/img/3px-tile.png), black;
+	border-top: 0.1rem solid;
+	border-bottom: .1rem solid;
+	border-top-right-radius: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	padding: .2rem;
+}
 
 
 
+.user-card p {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    border: .5rem solid #00000042;
+    padding: .5rem;
+	text-align: center;
+	background: #0024ff1a;
+}
+
+.user-stats {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	padding: 1rem;
+}
+
+.user-stats h4 {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	text-decoration: underline;
+	font-size: 1rem;
+}
+
+.user-stats p {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    padding: .5rem;
+    border: .5rem solid #00000042;
+    border-bottom: none;
+    background: #0024ff1a;
+}
+
+.user-stats p .float-right {
+	float: right;
+}
+
+.user-stats p:last-child {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    padding: .5rem;
+    border: .5rem solid #00000042;
+    background: #0024ff1a;
+}
+
+#user-info button {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    background: blue;
+    padding: 0.3rem;
+    color: white;
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    border: 0.2rem solid white;
+    border-radius: 0.4rem;
+}
+
+#user-info button:last-child {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    background: red;
+    padding: 0.3rem;
+    color: white;
+    margin: 0 2rem;
+    font-size: 1rem;
+    border: 0.2rem solid white;
+    border-radius: 0.4rem;
+}
 
 
 

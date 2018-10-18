@@ -84,6 +84,7 @@ const authTestData = {
         ]
     },
     name: 'Chris',
+    bio: "\"I'm here to kick ass and chew bubblegum. And I'm running low on gum.\"",
     profileImageLocation: '/img/',
     profileImage: 'test-profile-pic.png',
     isAuthed: true,
