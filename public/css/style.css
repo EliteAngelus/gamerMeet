@@ -364,7 +364,7 @@ ul {
     color: white;
     font-size: 1rem;
     border: 0.1rem solid white;
-    margin: 1.6rem 0 0 0;
+    margin: .8rem 0;
 	padding: 0.4rem 0;
 	width: 100%;
     text-shadow: 1px 1px 20px black;
@@ -378,6 +378,14 @@ ul {
 
 .form-wrap h1 {
 	margin-bottom: .5rem;
+}
+
+.form-wrap p {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	margin-bottom: 1rem;
 }
 
 /* input {
