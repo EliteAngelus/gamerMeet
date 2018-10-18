@@ -189,6 +189,12 @@ app.post("/signup", function(req, res) {
     res.redirect('/dashboard?auth=true');
 })
 
+app.post('/signin', (req,res) => {
+    console.log(req.body);
+
+    res.redirect('/dashboard?auth=true');
+})
+
 // PORT
 app.listen(3000, function() {
     console.log("Server started on Port 3000...")

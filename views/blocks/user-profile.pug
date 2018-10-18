@@ -3,7 +3,7 @@ extends ../template
 block content
     section#user-info
         .user-card
-            h3= name
+            h3= user.username
             - var imagePath = user.profileImageLocation + user.profileImage;
             img.profile-image(src= imagePath)
             p= bio
