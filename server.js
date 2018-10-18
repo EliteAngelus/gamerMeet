@@ -22,28 +22,64 @@ const authTestData = {
             {
                 name: 'Skyrim in Seattle',
                 id: 1,
+                latestNews: [
+                    {
+                        message: 'Simon Belmont has joined.',
+                        timestamp: 'today',
+                    }
+                ]
             },
             {
                 name: 'Tri-Force Heros',
                 id: 2,
+                latestNews: [
+                    {
+                        message: 'Zelda Night: A gathering of heros.',
+                        timestamp: 'today',
+                    }
+                ]
             },
             {
                 name: 'Not Even Our Final Form',
                 id: 3,
+                latestNews: [
+                    {
+                        message: 'Everyone has to put beerus on their team today.',
+                        timestamp: 'yesterday',
+                    }
+                ]
             }
         ],
         friends: [
             {
                 name: 'El Jefe',
-                id: 1
+                id: 1,
+                latestMessages: [
+                    {
+                        message: "I'm gonna learn beerus, he's not as bad as eveyone says.",
+                        timestamp: 'today'
+                    }
+                ],
             },
             {
                 name: 'Simon Belmont',
-                id:2
+                id:2,
+                latestMessages: [
+                    {
+                        message: "I can't wait to try bloodstained. I hope it dosen't suck.",
+                        timestamp: 'today'
+                    }
+                ],
             },
             {
                 name: 'Beerus Sucks',
-                id: 3
+                id: 3,
+                latestMessages: [
+                    {
+                        message: "Yup. Beerus sucks. Sigh.",
+                        timestamp: 'yesterday'
+                    }
+                ],
             }
         ]
     },
@@ -145,10 +181,12 @@ app.post("/signup", function(req, res) {
 
     console.log(req.body);
 
-    connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
-        if (error) throw error;
-        console.log('The solution is: ', results[0]);
-    });
+    // connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
+    //     if (error) throw error;
+    //     console.log('The solution is: ', results[0]);
+    // });
+
+    res.redirect('/dashboard?auth=true');
 })
 
 // PORT

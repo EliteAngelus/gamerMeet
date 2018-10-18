@@ -2,30 +2,29 @@ extends ../template
 
 block content
     section#dashboard
-        div 
-            - var userProfileImage = user.profileImageLocation + user.profileImage
-            img(src= userProfileImage)
-            h4 #{user.username} 
-        br
-        
-        #account-options
-            h4 Account Options
-            p Change Info
-            p Manage Friends
-            p Manage Groups
-            p Privacy Settings
-    br
+        h3.dashboard-title #{user.username}
+        - var userProfileImage = user.profileImageLocation + user.profileImage
+        img(src= userProfileImage)
 
     section#friend-activity
-        h3 Latest from your friends:
+        h4.dashboard-title Latest from your friends
         each friend in user.friends
-            .friend-card
+            .dashboard-card
                 h5 #{friend.name}
-    br
+                p #{friend.latestMessages[0].message}
+                p: i #{friend.latestMessages[0].timestamp}
 
     section#group-activity
-        h3 Latest from your groups:
+        h4.dashboard-title Latest from your groups
         each group in user.groups
-            .group-card 
+            .dashboard-card 
                 h5 #{group.name}
-    br
+                p #{group.latestNews[0].message}
+                p: i #{group.latestNews[0].timestamp}
+
+    section#account-options
+            h5.dashboard-title Account Options
+            p Manage Friends
+            p Manage Groups
+            p Change Info
+            p Privacy Settings
