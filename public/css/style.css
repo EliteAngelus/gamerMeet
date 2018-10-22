@@ -38,7 +38,7 @@ body {
 }
 
 .background-main {
-	background: url(/img/3px-tile.png), linear-gradient(#284391, #050a18);
+	background: url(/img/3px-tile.png),linear-gradient(#284391, #050a18);
 	background-attachment: fixed;
 	color: #f3f3f3;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 .background-dark {
-	background: url(/img/3px-tile.png), #000336;
+	background: url(/img/3px-tile.png), #000449;
 	color: #091436;
 }
 
@@ -57,6 +57,7 @@ body {
 	background: #eff3ff;
 	color: #091436;
 }
+
 
 
 /* NAV  Styles */
@@ -97,14 +98,6 @@ nav #menu {
     justify-content: flex-end;
     margin-right: 0.5rem;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -340,34 +333,88 @@ ul {
 
 #sign-up {
     color: white;
-    padding: 0;
     text-shadow: 1px 1px 20px black;
-    margin: 0;
-    background: url(../img/video.jpg) top/220%;
-    /* background-attachment: fixed; */
+	height: 100%;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 5vh 1fr 5vh;
+    grid-template-rows: 1fr auto 1fr;
     position: relative;
 }
 
 .form-wrap {
-	width: 98%;
-	padding: 4px 3px;
-	opacity: 0.9;
+	position: relative;
+	padding: 1rem 2rem;
 	grid-column-start: 1;
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 3;
 }
 
-input {
+.form-wrap input {
+	width: 100%;
+	padding: .3rem;
+	box-sizing: border-box;
+	margin: 0.2rem 0 0.8rem;
+	border-radius: .4rem;
+}
+
+.form-wrap button {
+	background: blue;
+    color: white;
+    font-size: 1rem;
+    border: 0.1rem solid white;
+    margin: .8rem 0;
+	padding: 0.4rem 0;
+	width: 100%;
+    text-shadow: 1px 1px 20px black;
+    border-radius: 0.4rem;
+}
+
+.form-wrap label {
+	font-size: .8rem;
+	float: left;
+}
+
+.form-wrap h1 {
+	margin-bottom: .5rem;
+}
+
+.form-wrap p {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	margin-bottom: 1rem;
+}
+
+.form-wrap p a {
+	color: white;
+	text-decoration: none;
+	border: .2rem solid white;
+	padding: .2rem;
+	border-radius: .4rem;
+	background: orangered;
+}
+
+#sign-in {
+    color: white;
+    text-shadow: 1px 1px 20px black;
+	height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto 1fr;
+    position: relative;
+}
+
+
+/* input {
     padding: 6px 20px;
     padding-bottom: 6px;
     margin: 2px;
     border-radius: 5px;
-}
+} */
 
 
 /* input {
@@ -488,6 +535,213 @@ input {
 	grid-column-start: 1;
 	grid-column-end: 3;
 }
+
+
+/* DASHBOARD Styles */
+#dashboard {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+}
+
+#dashboard img {
+	grid-column-start: 2;
+    grid-column-end: 3;
+    display: block;
+    width: 8rem;
+    padding: 2rem;
+}
+
+.dashboard-title {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    display: block;
+    background: url(/img/3px-tile.png), black;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: .5rem;
+    border-top: 0.1rem solid;
+    border-bottom: .1rem solid;
+    border-right: .1rem solid;
+	padding: .2rem;
+}
+
+#friend-activity {
+	display: grid;
+	grid-template-columns: 1fr;
+	text-shadow: 1px 1px 20px black;
+}
+
+.dashboard-card {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    text-shadow: 0px 0px 20px black,0px 0px 20px black;
+    padding: .5rem;
+	border: 0.3rem solid #00000042;
+	border-bottom: none;
+	background: #0024ff1a;
+}
+
+.dashboard-card:last-child {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    text-shadow: 0px 0px 20px black,0px 0px 20px black;
+    padding: .5rem;
+	border: 0.3rem solid #00000042;
+	background: #0024ff1a;
+}
+
+.dashboard-card h5 {
+	font-size: 1rem;
+    text-decoration: underline;
+}
+
+.dashboard-card p {
+	padding: 0.4rem .4rem 0;
+}
+
+.dashboard-card p:last-child {
+	font-size: 0.7rem;
+    float: right;
+    padding: 0;
+}
+
+#group-activity {
+	display: grid;
+	grid-template-columns: 1fr;
+	text-shadow: 1px 1px 20px black;
+}
+
+#account-options {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	text-shadow: 1px 1px 20px black;
+}
+
+#account-options .dashboard-title {
+	grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#account-options p {
+	text-align: center;
+    padding: 0.7rem;
+	border: .4rem solid #00000042;
+	background: #0024ff1a;
+}
+
+
+
+
+
+
+/* USER-PROFILE Styles */
+#user-info {
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	text-shadow: 0px 0px 20px black, 0px 0px 20px black;
+}
+
+.user-card {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+}
+
+.user-card img {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	padding: 1rem;
+	width: 10rem;
+}
+
+.user-card h3 {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	text-align: center;
+	background: url(/img/3px-tile.png), black;
+	border-top: 0.1rem solid;
+	border-bottom: .1rem solid;
+	border-top-right-radius: 0.5rem;
+	border-top-left-radius: 0.5rem;
+	padding: .2rem;
+}
+
+
+
+.user-card p {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    border: .5rem solid #00000042;
+    padding: .5rem;
+	text-align: center;
+	background: #0024ff1a;
+}
+
+.user-stats {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	padding: 1rem;
+}
+
+.user-stats h4 {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	text-decoration: underline;
+	font-size: 1rem;
+}
+
+.user-stats p {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    padding: .5rem;
+    border: .5rem solid #00000042;
+    border-bottom: none;
+    background: #0024ff1a;
+}
+
+.user-stats p .float-right {
+	float: right;
+}
+
+.user-stats p:last-child {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    padding: .5rem;
+    border: .5rem solid #00000042;
+    background: #0024ff1a;
+}
+
+#user-info button {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    background: blue;
+    padding: 0.3rem;
+    color: white;
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    border: 0.2rem solid white;
+    border-radius: 0.4rem;
+}
+
+#user-info button:last-child {
+	grid-column-start: 1;
+    grid-column-end: 4;
+    background: red;
+    padding: 0.3rem;
+    color: white;
+    margin: 0 2rem;
+    font-size: 1rem;
+    border: 0.2rem solid white;
+    border-radius: 0.4rem;
+}
+
+
 
 /* Footer */
 footer {

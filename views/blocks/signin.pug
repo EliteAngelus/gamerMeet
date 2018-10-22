@@ -1,23 +1,28 @@
 extends ../template
 
 block content
-    section#sign-in.section-grid
-        .content-section
-            form.sign-in-form(action="", method="POST")
-                label(for="sign-in-username") Username: 
-                br
-                input#sign-in-username(
-                    type="text" 
-                    name="username" 
-                    placeholder="Username"
-                )
-                br
+    section#sign-in
+        form.form-wrap(action="/signin", method="POST")
+            h1 Sign In
+            label(for="sign-in-username") Your Username
+            input(
+                id="sign-in-username"
+                type="text" 
+                name="username" 
+                placeholder="Username"
+                value="CXL"
+            )
 
-                label(for="sign-in-password") Password: 
-                br
-                input#sign-in-password(
-                    type="password" 
-                    name="password" 
-                    placeholder="Password"
-                )
-                br
+            label(for="sign-in-password") Password: 
+            input(
+                id="sign-in-password"
+                type="password" 
+                name="password" 
+                placeholder="Password"
+                value="MindYourBusiness.yup"
+            )
+
+            button(type="submit") Sign In
+
+            p Don't have an account? #[a(href="/signin") Sign Up]
+              
