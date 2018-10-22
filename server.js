@@ -115,19 +115,8 @@ app.get('/dashboard', (req,res) => {
     
 })
 
-<<<<<<< HEAD
 app.get('/test', (req, res) => {
     res.render('index', { title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris' })
-=======
-app.get('/user-profile', (req,res) => {
-    if (req.query.auth){
-        res.render('blocks/user-profile', authTestData);
-    }
-    else {
-        res.render('blocks/user-profile', nonAuthTestData);
-    }
-    
->>>>>>> chris
 })
 // --------------------------------------------------
 

@@ -27,7 +27,6 @@ html {
 }
 
 body {
-<<<<<<< HEAD
     position: relative;
     min-height: 100%;
     display: grid;
@@ -40,44 +39,12 @@ body {
 
 #body {
     position: relative;
-=======
-	position: relative;
-	min-height: 100%;
-	display: grid;
-	grid-template-rows: auto 1fr auto;	
-}
-
-.container {
-	position: relative;
-}
-
-.background-main {
-	background: url(/img/3px-tile.png), linear-gradient(#284391, #050a18);
-	background-attachment: fixed;
-	color: #f3f3f3;
-}
-
-.background-primary {
-	background: #141B9F;
-	color: #091436;
-}
-
-.background-dark {
-	background: url(/img/3px-tile.png), #000336;
-	color: #091436;
-}
-
-.background-light {
-	background: #eff3ff;
-	color: #091436;
->>>>>>> chris
 }
 
 
 /* NAV  Styles */
 
 nav {
-<<<<<<< HEAD
     /* background-color: ; */
     color: #ffffff;
     font-family: "Shadows Into Light", cursive;
@@ -91,22 +58,6 @@ nav {
     text-shadow: 0px 2px 0px black, 0 -2px 0 black;
     padding: 0.5rem;
     z-index: 1000;
-=======
-	position: sticky;
-	top: 0%;
-	padding: 0.5rem;
-	font-family: "Shadows Into Light", cursive;
-	text-shadow: 0px 0px 10px black,
-		0px 0px 10px black,
-		0px 0px 10px black;
-	box-shadow: 0px 0px 20px 0px #00000033;
-	border-bottom-left-radius: .5rem;
-	border-bottom-right-radius: .5rem;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr;
-	z-index: 1000;
->>>>>>> chris
 }
 
 nav a {
@@ -190,7 +141,6 @@ h1 p {
 }
 
 .content-section {
-<<<<<<< HEAD
     grid-column-start: 1;
     grid-column-end: 4;
     background: url("../img/3px-tile.png"), #5f5e5e;
@@ -200,17 +150,6 @@ h1 p {
     border-radius: 0.4rem;
     box-shadow: 0 0 20px 0px #000000a6;
     z-index: 10;
-=======
-	grid-column-start: 1;
-	grid-column-end: 4;
-	/* background: url("../img/3px-tile.png"), #5f5e5e; */
-	color: white;
-	margin: 2rem 0;
-	padding: 0.2rem;
-	/* border-radius: 0.4rem; */
-	/* box-shadow: 0 0 20px 0px #000000a6; */
-	z-index: 10;
->>>>>>> chris
 }
 
 #featured {
@@ -537,13 +476,7 @@ input {
 /* Footer */
 
 footer {
-<<<<<<< HEAD
     box-shadow: 0px 5px 20px black;
-=======
-	box-shadow: 0px 0px 20px -2px #00000033;
-	border-top-left-radius: .5rem;
-	border-top-right-radius: .5rem;
->>>>>>> chris
 }
 
 footer .footer-cols {
