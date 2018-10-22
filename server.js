@@ -9,46 +9,14 @@ const app = express();
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-const authTestData = {
-    title: 'Testing out PUG',
-    message: 'Pug is pretty cool.',
-    user: {
-        username: 'CXL',
-        profileImageLocation: '/img/',
-        profileImage: 'test-profile-pic.png',
-        joinDate: '10/10/2018',
-        lastActive: 'Today',
-        groups: [
-            {
-                name: 'Skyrim in Seattle',
-                id: 1,
-            },
-            {
-                name: 'Tri-Force Heros',
-                id: 2,
-            },
-            {
-                name: 'Not Even Our Final Form',
-                id: 3,
-            }
-        ]
-    },
-    name: 'Chris',
-    profileImageLocation: '/img/',
-    profileImage: 'test-profile-pic.png',
-    isAuthed: true,
-    numberArray: [1,2,3,4,1,2,3,4],
-    colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
-}
+const authTestData = require('./test-data/user-CXL.js');
+const nonAuthTestData = require('./test-data/non-auth.js');
+const groupData = [
+    require('./test-data/group-NEOFF.js'),
 
-const nonAuthTestData = {
-    title: 'Testing out PUG',
-    message: 'Pug is pretty cool.',
-    name: 'Chris',
-    isAuthed: false,
-    numberArray: [1,2,3,4,1,2,3,4],
-    colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
-}
+]
+
+
 
 // const connection = mysql.createConnection({
 //     host: 'localhost',
@@ -115,8 +83,23 @@ app.get('/dashboard', (req,res) => {
     
 })
 
+<<<<<<< HEAD
 app.get('/test', (req, res) => {
     res.render('index', { title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris' })
+=======
+app.get('/user-profile', (req,res) => {
+    if (req.query.auth){
+        res.render('blocks/user-profile', authTestData);
+    }
+    else {
+        res.render('blocks/user-profile', nonAuthTestData);
+    }
+
+})
+
+app.get('/group-profile/:groupID', (req,res) => {
+    res.render('blocks/group-profile', groupData[req.params.groupID]);
+>>>>>>> chris
 })
 // --------------------------------------------------
 
@@ -141,10 +124,18 @@ app.post("/signup", function(req, res) {
 
     console.log(req.body);
 
-    connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
-        if (error) throw error;
-        console.log('The solution is: ', results[0]);
-    });
+    // connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
+    //     if (error) throw error;
+    //     console.log('The solution is: ', results[0]);
+    // });
+
+    res.redirect('/dashboard?auth=true');
+})
+
+app.post('/signin', (req,res) => {
+    console.log(req.body);
+
+    res.redirect('/dashboard?auth=true');
 })
 
 // PORT

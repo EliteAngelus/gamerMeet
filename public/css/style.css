@@ -1,8 +1,11 @@
 /* Font Imports */
+
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
 @import url("https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light");
 
 /* Color Palette */
+
+
 /* 
  * Primary - FFC138
  * Accent1 - 34399F
@@ -15,7 +18,9 @@
  * Black - 091436
 */
 
+
 /* TEMPLATE Styles */
+
 * {
     padding: 0;
     margin: 0;
@@ -62,33 +67,23 @@ nav {
 
 nav a {
     color: whitesmoke;
-	text-decoration: none;
+    text-decoration: none;
 }
 
 nav #logo {
-	grid-column-start: 1;
-	grid-column-end: 3;
-	margin-left: .5rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-left: .5rem;
 }
 
 nav #menu {
-	grid-column-start: 3;
-	grid-column-end: 4;
-	display: flex;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-right: 0.5rem;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /* SECTION */
@@ -103,13 +98,9 @@ nav #menu {
 #hero {
     color: white;
     padding: 0;
-	text-shadow: 0px 0px 10px black,
-		0px 0px 10px black,
-		0px 0px 10px black,
-		0px 0px 10px black;
-	margin-top: -.5rem;
-	background: url(/img/TFH_Three_Swords.png) center/cover, 
-		linear-gradient( #d2c11f5c, #00000000);
+    text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+    margin-top: -.5rem;
+    background: url(/img/TFH_Three_Swords.png) center/cover, linear-gradient( #d2c11f5c, #00000000);
     /* background-attachment: fixed; */
     text-align: center;
     display: grid;
@@ -119,7 +110,7 @@ nav #menu {
 }
 
 .hero-content {
-	grid-column-start: 1;
+    grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
@@ -294,15 +285,13 @@ strong {
     background-color: #24247c;
     border-radius: 0.4rem;
     border: 2px solid #3838b0;
-	text-decoration: none;
-	text-shadow: none;
+    text-decoration: none;
+    text-shadow: none;
 }
 
 .signUp:hover {
     background-color: #143f85;
 }
-
-
 
 ul {
     list-style: none;
@@ -323,15 +312,12 @@ ul {
 
 #sign-up {
     color: white;
-    padding: 0;
     text-shadow: 1px 1px 20px black;
-    margin: 0;
-    background: url(../img/video.jpg) top/220%;
-    /* background-attachment: fixed; */
+    height: 100%;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 5vh 1fr 5vh;
+    grid-template-rows: 1fr auto 1fr;
     position: relative;
 }
 
@@ -345,12 +331,70 @@ ul {
     grid-row-end: 3;
 }
 
-input {
+.form-wrap input {
+    width: 100%;
+    padding: .3rem;
+    box-sizing: border-box;
+    margin: 0.2rem 0 0.8rem;
+    border-radius: .4rem;
+}
+
+.form-wrap button {
+    background: blue;
+    color: white;
+    font-size: 1rem;
+    border: 0.1rem solid white;
+    margin: .8rem 0;
+    padding: 0.4rem 0;
+    width: 100%;
+    text-shadow: 1px 1px 20px black;
+    border-radius: 0.4rem;
+}
+
+.form-wrap label {
+    font-size: .8rem;
+    float: left;
+}
+
+.form-wrap h1 {
+    margin-bottom: .5rem;
+}
+
+.form-wrap p {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-bottom: 1rem;
+}
+
+.form-wrap p a {
+    color: white;
+    text-decoration: none;
+    border: .2rem solid white;
+    padding: .2rem;
+    border-radius: .4rem;
+    background: orangered;
+}
+
+#sign-in {
+    color: white;
+    text-shadow: 1px 1px 20px black;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto 1fr;
+    position: relative;
+}
+
+
+/* input {
     padding: 6px 20px;
     padding-bottom: 6px;
     margin: 2px;
     border-radius: 5px;
-}
+} */
 
 
 /* input {

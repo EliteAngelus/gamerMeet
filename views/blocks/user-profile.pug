@@ -3,20 +3,24 @@ extends ../template
 block content
     section#user-info
         .user-card
-            h3= name
             - var imagePath = user.profileImageLocation + user.profileImage;
             img.profile-image(src= imagePath)
+            h3= user.username
             p= bio
         br
 
         .user-stats
-            h4 User Stats:
-            p Member since: #{user.joinDate}
-            p Last Active: #{user.lastActive}
-            p Groups:
-                each group in user.groups
-                    - var groupLink = '/group-profile/' + group.id
-                    p: a(href= groupLink) #{group.name}
+            h4 User Stats
+            p Member since #[em.float-right #{user.joinDate}]
+            p Last Active #[em.float-right #{user.lastActive}]
 
-        button Send Friend Request
+        .user-stats
+            h4 Groups
+            each group in user.groups
+                - var groupLink = '/group-profile/' + group.id
+                p: a(href= groupLink) #{group.name}
+        
+        .user-stats
+            button Send Friend Request
+            button Report User
             

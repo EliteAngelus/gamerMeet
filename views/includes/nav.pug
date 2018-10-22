@@ -1,7 +1,7 @@
 nav.background-dark
     a#logo(href="/"): h2 Gamer's MeetUp
     if isAuthed
-        a#menu(href="#"): p #{name}
+        a#menu(href="#"): p #{user.username}
     else
         a#menu(href="#"): p Login
         
