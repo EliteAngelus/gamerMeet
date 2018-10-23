@@ -3,10 +3,11 @@ const groupData = {
 	name: "Not Even Our Final Form",
 	message:
 		"I don't choose my real form because my power is too radical to control.",
-    bannerImageLocation: "",
-    bannerImage: "",
-    cardImage: "",
-    cardImageLocation: "", 
+    bannerImageLocation: "/img/",
+    bannerImage: "not-even-our-final-form-group-banner.jpg",
+    cardImage: "/img/",
+    cardImageLocation: "freeza-group-image.png", 
+    createDate: "10/01/18",
     members: [
 		{
 			username: "CXL",
@@ -30,7 +31,7 @@ const groupData = {
     events: [
         {
             name: "Awaken the God of Destruction!",
-            message: "Everyone has to put Beerus on thier team today!",
+            description: "Everyone has to put Beerus on thier team today!",
             timestamp: "yesterday",
             startDate: "10/17/18",
             endDate: "10/18/18",

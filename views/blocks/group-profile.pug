@@ -1,5 +1,37 @@
 extends ../template
 
 block content
-    h1 Here is some content
-    h3= message
+    section#group-info
+        .group-banner
+            - var bannerImg = bannerImageLocation + bannerImage;
+            img(src= bannerImg)
+            h3= name
+            p= message
+        
+        .group-stats
+            h4 Events
+            each event in events
+                .event-card
+                    h3= event.name
+                    p= event.description
+                    p #{event.startDate} - #{event.endDate}
+
+
+        .group-stats
+            h4 Members
+            each member in members
+                .member-card
+                    p= member.username
+                    - var userImg = member.profileImageLocation + member.profileImage
+                    img(src= userImg)    
+            p.browse-more: em Browse all members
+
+        .group-stats
+            h4 Stats
+            p Created #[em.float-right #{createDate}]
+        
+        .group-stats
+            button Join Group 
+            
+        
+        

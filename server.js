@@ -94,7 +94,7 @@ app.get('/user-profile', (req,res) => {
 })
 
 app.get('/group-profile/:groupID', (req,res) => {
-    res.render('blocks/group-profile', groupData[req.params.groupID]);
+    res.render('blocks/group-profile', groupData[req.params.groupID - 1]);
 })
 // --------------------------------------------------
 
