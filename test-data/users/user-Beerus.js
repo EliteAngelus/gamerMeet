@@ -1,13 +1,13 @@
-const authTestData = {
+const userBeerus = {
     title: 'Testing out PUG',
     message: 'Pug is pretty cool.',
     user: {
-        username: 'CXL',
+        username: 'Beerus Sucks',
         profileImageLocation: '/img/',
-        profileImage: 'test-profile-pic.png',
-        joinDate: '10/10/2018',
+        profileImage: 'user-beerus-profile-image.png',
+        joinDate: '10/02/2018',
         lastActive: 'Today',
-        id: 4,
+        id: 1,
         groups: [
             {
                 name: 'Skyrim in Seattle',
@@ -42,11 +42,11 @@ const authTestData = {
         ],
         friends: [
             {
-                name: 'El Jefe',
-                id: 1,
+                name: 'CXL',
+                id: 4,
                 latestMessages: [
                     {
-                        message: "I'm gonna learn beerus, he's not as bad as eveyone says.",
+                        message: "UNIst > *insert fighting game*",
                         timestamp: 'today'
                     }
                 ],
@@ -62,24 +62,24 @@ const authTestData = {
                 ],
             },
             {
-                name: 'Beerus Sucks',
+                name: 'El Jefe',
                 id: 3,
                 latestMessages: [
                     {
-                        message: "Yup. Beerus sucks. Sigh.",
-                        timestamp: 'yesterday'
+                        message: "I'm gonna learn beerus, he's not as bad as eveyone says.",
+                        timestamp: 'today'
                     }
                 ],
             }
         ]
     },
-    name: 'Chris',
-    bio: "\"I'm here to kick ass and chew bubblegum. And I'm running low on gum.\"",
+    name: 'Beerus the God of Destruction',
+    bio: "I'm going back to sleep. Wake me up when the next patch drops.",
     profileImageLocation: '/img/',
-    profileImage: 'test-profile-pic.png',
+    profileImage: 'user-beerus-profile-image.png',
     isAuthed: true,
     numberArray: [1,2,3,4,1,2,3,4],
     colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
 }
 
-module.exports = authTestData;
+module.exports = userBeerus;

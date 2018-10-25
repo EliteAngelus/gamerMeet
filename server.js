@@ -9,11 +9,21 @@ const app = express();
 app.set('views', './views');
 app.set('view engine', 'pug');
 
-const authTestData = require('./test-data/user-CXL.js');
+const authTestData = require('./test-data/users/user-Beerus.js');
 const nonAuthTestData = require('./test-data/non-auth.js');
 const groupData = [
-    require('./test-data/group-NEOFF.js'),
+    {groupDefault: "Error obj"},
+    require('./test-data/groups/group-SIS.js'),
+    require('./test-data/groups/group-TFH.js'),
+    require('./test-data/groups/group-NEOFF.js'),
+]
 
+const userData = [
+    {userDefault: "Error obj"},
+    require('./test-data/users/user-Jefe.js'),
+    require('./test-data/users/user-Simon.js'),
+    require('./test-data/users/user-Beerus.js'),
+    require('./test-data/users/user-CXL.js'),
 ]
 
 
@@ -83,9 +93,11 @@ app.get('/dashboard', (req,res) => {
     
 })
 
-app.get('/user-profile', (req,res) => {
-    if (req.query.auth){
-        res.render('blocks/user-profile', authTestData);
+app.get('/user-profile/:userID', (req,res) => {
+    if (req.query.auth && req.params.userID){
+        data = userData[req.params.userID];
+
+        res.render('blocks/user-profile', data);
     }
     else {
         res.render('blocks/user-profile', nonAuthTestData);
@@ -94,7 +106,9 @@ app.get('/user-profile', (req,res) => {
 })
 
 app.get('/group-profile/:groupID', (req,res) => {
-    res.render('blocks/group-profile', groupData[req.params.groupID - 1]);
+    if (req.params.groupID){
+        res.render('blocks/group-profile', groupData[req.params.groupID]);
+    }
 })
 // --------------------------------------------------
 
