@@ -579,6 +579,8 @@ ul {
 	border: 0.3rem solid #00000042;
 	border-bottom: none;
 	background: #0024ff1a;
+	color: white;
+	text-decoration: none;
 }
 
 .dashboard-card:last-child {
@@ -605,6 +607,7 @@ ul {
     padding: 0;
 }
 
+
 #group-activity {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -622,11 +625,16 @@ ul {
     grid-column-end: 3;
 }
 
+#account-options a {
+	text-decoration: none;
+}
+
 #account-options p {
 	text-align: center;
     padding: 0.7rem;
 	border: .4rem solid #00000042;
 	background: #0024ff1a;
+	color: white;
 }
 
 
@@ -702,7 +710,12 @@ ul {
     padding: .5rem;
     border: .5rem solid #00000042;
     border-bottom: none;
-    background: #0024ff1a;
+	background: #0024ff1a;
+}
+
+.user-stats p a {
+	color: white;
+	text-decoration: none;
 }
 
 .float-right {

@@ -63,7 +63,7 @@ const userBeerus = {
             },
             {
                 name: 'El Jefe',
-                id: 3,
+                id: 1,
                 latestMessages: [
                     {
                         message: "I'm gonna learn beerus, he's not as bad as eveyone says.",
