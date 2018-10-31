@@ -1,5 +1,5 @@
 const groupData = {
-    id: 1,
+    id: 3,
 	name: "Not Even Our Final Form",
 	message:
 		"I don't choose my real form because my power is too radical to control.",
@@ -19,13 +19,13 @@ const groupData = {
 			username: "El Jefe",
 			id: 1,
 			profileImageLocation: "/img/",
-			profileImage: "test-profile-pic.png",
+			profileImage: "user-jefe-profile-image.png",
         },
         {
 			username: "Beerus Sucks",
 			id: 3,
 			profileImageLocation: "/img/",
-			profileImage: "test-profile-pic.png",
+			profileImage: "user-beerus-profile-image.png",
 		}
     ],
     events: [

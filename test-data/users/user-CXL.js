@@ -1,4 +1,4 @@
-const authTestData = {
+const userCXL = {
     title: 'Testing out PUG',
     message: 'Pug is pretty cool.',
     user: {
@@ -82,4 +82,4 @@ const authTestData = {
     colorObject: {color1: 'red', color2: 'blue', color3: 'green'}
 }
 
-module.exports = authTestData;
+module.exports = userCXL;
