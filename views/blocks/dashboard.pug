@@ -9,7 +9,8 @@ block content
     section#friend-activity
         h4.dashboard-title Latest from your friends
         each friend in user.friends
-            .dashboard-card
+            - var userURL = "/user-profile/" + friend.id + "?auth=true"
+            a(href= userURL).dashboard-card
                 h5 #{friend.name}
                 p #{friend.latestMessages[0].message}
                 p: i #{friend.latestMessages[0].timestamp}
@@ -17,14 +18,19 @@ block content
     section#group-activity
         h4.dashboard-title Latest from your groups
         each group in user.groups
-            .dashboard-card 
+            - var groupURL = "/group-profile/" + group.id + "?auth=true"
+            a(href= groupURL).dashboard-card
                 h5 #{group.name}
                 p #{group.latestNews[0].message}
                 p: i #{group.latestNews[0].timestamp}
 
     section#account-options
             h5.dashboard-title Account Options
-            p Manage Friends
-            p Manage Groups
-            p Change Info
-            p Privacy Settings
+            a(href="") 
+                p Manage Friends
+            a(href="") 
+                p Manage Groups
+            a(href="") 
+                p Change Info
+            a(href="") 
+                p Privacy Settings
