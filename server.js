@@ -89,66 +89,44 @@ app.get('/dashboard', (req, res) => {
 
 })
 
-app.get('/test', (req, res) => {
-            res.render('index', { title: 'Testing out PUG template engine.', message: 'PUG is pretty cool.', name: 'Chris' })
-            app.get('/user-profile', (req, res) => {
-                        if (req.query.auth) {
-                            res.render('blocks/user-profile', authTestData);
-                            app.get('/user-profile/:userID', (req, res) => {
-                                if (req.query.auth && req.params.userID) {
-                                    data = userData[req.params.userID];
+app.get('/user-profile/:userID', (req, res) => {
+    if (req.query.auth && req.params.userID) {
+        data = userData[req.params.userID];
 
-                                    res.render('blocks/user-profile', data);
-                                } else {
-                                    res.render('blocks/user-profile', nonAuthTestData);
-                                }
+        res.render('blocks/user-profile', data);
+    } else {
+        res.render('blocks/user-profile', nonAuthTestData);
+    }
 
-                            })
+})
 
-                            app.get('/group-profile/:groupID', (req, res) => {
-                                    res.render('blocks/group-profile', groupData[req.params.groupID]);
-                                    if (req.params.groupID) {
-                                        res.render('blocks/group-profile', groupData[req.params.groupID]);
-                                    }
-                                })
-                                // --------------------------------------------------
-
-                            app.get("/profile", (req, res) => {
-                                res.sendFile(path.join(__dirname, "./public/user-profile.html"))
-                            })
-
-                            app.get("/dash", (req, res) => {
-                                res.sendFile(path.join(__dirname, "./public/dashboard.html"))
-                            })
-
-                            app.get("/group", (req, res) => {
-                                res.sendFile(path.join(__dirname, "./public/group-profile.html"))
-                            })
-                            app.get("/directory", (req, res) => {
-                                res.sendFile(path.join(__dirname, "./public/group-dir.html"))
-                            })
+app.get('/group-profile/:groupID', (req, res) => {
+        if (req.params.groupID) {
+            res.render('blocks/group-profile', groupData[req.params.groupID]);
+        }
+    })
+    // --------------------------------------------------
 
 
+app.post("/signup", function(req, res) {
 
-                            app.post("/signup", function(req, res) {
+    console.log(req.body);
 
-                                console.log(req.body);
+    // connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
+    //     if (error) throw error;
+    //     console.log('The solution is: ', results[0]);
+    // });
 
-                                // connection.query('Insert into userInfo (username, first_name, last_name, email, password) values("' + req.body.Username + '", "' + req.body.firstname + '", "' + req.body.lastname + '", "' + req.body.Email + '", "' + req.body.password + '")', function(error, results, fields) {
-                                //     if (error) throw error;
-                                //     console.log('The solution is: ', results[0]);
-                                // });
+    res.redirect('/dashboard?auth=true');
+})
 
-                                res.redirect('/dashboard?auth=true');
-                            })
+app.post('/signin', (req, res) => {
+    console.log(req.body);
 
-                            app.post('/signin', (req, res) => {
-                                console.log(req.body);
+    res.redirect('/dashboard?auth=true');
+})
 
-                                res.redirect('/dashboard?auth=true');
-                            })
-
-                            // PORT
-                            app.listen(3000, function() {
-                                console.log("Server started on Port 3000...")
-                            })
+// PORT
+app.listen(3000, function() {
+    console.log("Server started on Port 3000...")
+})
