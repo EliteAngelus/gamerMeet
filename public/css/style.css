@@ -5,8 +5,7 @@
 @font-face {
 	font-family: "Shadows Into Light";
 	src: url("/fonts/shadows-into-light/ShadowsIntoLight.ttf")
-			format("truetype"),
-		url("/fonts/acme-regular/Acme-Regular.ttf") format("truetype");
+		format("truetype");
 }
 
 @font-face {
