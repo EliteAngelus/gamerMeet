@@ -9,7 +9,6 @@ CREATE TABLE userAccounts(
     username varchar(20) not null,
     joinDate date not null,
     email varchar(40) not null,
-    password varchar(30) not null,
     primary key(accountID)
 );
 
@@ -17,9 +16,9 @@ CREATE TABLE userAccounts(
 CREATE TABLE users(
 	userID int auto_increment not null,
     accountID int not null,
-	profileAccess bool not null,
+	profileAccess bool default 0,
 	username varchar(30) not null,
-    joinDate date,
+    joinDate date not null,
     lastActive datetime,
     profileImage text,
     profileBanner text,
@@ -47,7 +46,7 @@ CREATE TABLE userMessages(
 
 CREATE TABLE sessions(
 	ID int auto_increment not null,
-    accountID int,
+    accountID int default null,
     cookieID text not null,
     cookieIP text not null,
     lastActive datetime not null,
@@ -56,15 +55,24 @@ CREATE TABLE sessions(
     foreign key (accountID) references userAccounts(accountID)
 );
 
+CREATE TABLE hashes(
+	ID int auto_increment not null,
+    accountID int not null,
+    iterations int not null,
+    hash text not null,
+    primary key(ID),
+    foreign key (accountID) references userAccounts(accountID)
+);
 
-insert into userAccounts(username, joinDate, email, password) 
+
+insert into userAccounts(username, joinDate, email) 
 	values
-    ("CXL", date("2018-08-10"), "CXL@CXL.CXL", "GuessMeIfYouCan"),
-    ("Jefe", date("2018-08-11"), "CXL@CXL.CXL", "GuessMeIfYouCan"),
-    ("Simon Belmont", date("2018-08-12"), "CXL@CXL.CXL", "GuessMeIfYouCan"),
-    ("Beerus Sucks", date("2018-08-13"), "CXL@CXL.CXL", "GuessMeIfYouCan"),
-    ("Samus", date("2018-08-14"), "CXL@CXL.CXL", "GuessMeIfYouCan"),
-    ("I play on WiFi", date("2018-08-15"), "CXL@CXL.CXL", "GuessMeIfYouCan")
+    ("CXL", date("2018-08-10"), "CXL@CXL.CXL"),
+    ("Jefe", date("2018-08-11"), "CXL@CXL.CXL"),
+    ("Simon Belmont", date("2018-08-12"), "CXL@CXL.CXL"),
+    ("Beerus Sucks", date("2018-08-13"), "CXL@CXL.CXL"),
+    ("Samus", date("2018-08-14"), "CXL@CXL.CXL"),
+    ("I play on WiFi", date("2018-08-15"), "CXL@CXL.CXL")
     ;
     
 insert into users(accountID, profileAccess, username, joinDate, lastActive, profileImage, profileBanner, friends, joinedEvents, joinedGroups, mods, bio)
