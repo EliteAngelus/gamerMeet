@@ -2,12 +2,14 @@ const sessionController = {
     // Create a session and store the connections cookieID and cookieIP.
 	create: function(cookieID, cookieIP, connection, cb) {
 		connection.execute(
-            "INSERT INTO `sessions` (accountID, cookieID, cookieIP, lastActive) VALUES(?, ?, ?, NOW())", 
-            [null, cookieID, cookieIP],
+            "INSERT INTO `sessions` (cookieID, cookieIP, lastActive) VALUES(?, ?, NOW())", 
+            [cookieID, cookieIP],
             function(error, results, fields) {
-			    if (error) throw error;
-                console.log("\n\nSession Created: ", results);
-                cb();
+                if (error) throw error;
+                
+                console.log("\n\nsessionController - Session Created: ", results);
+
+                cb(results);
 		});
 	},
 
@@ -16,14 +18,25 @@ const sessionController = {
         connection.execute("UPDATE `sessions` SET accountID=?, sessionCreated=NOW() WHERE cookieID=?", 
         [accountID, cookieID],
         function(error, results, fields) {
-			if (error) throw error;
-			console.log("\n\nSession refreshed: ", results);
+            if (error) throw error;
+            
+			console.log("\n\nsessionController - Session refreshed: ", results);
 		});
     },
     
     // Update a session with an accountID
-    update: function() {
+    update: function(accountID, cookieID, cookieIP, connection, cb) {
+        const queryString = 
+            "UPDATE `sessions` SET `accountID`=? WHERE `cookieID`=? AND " +
+            "`cookieIP`=?;"
 
+        connection.execute(queryString,[accountID, cookieID, cookieIP], (err, results, fields) => {
+            if (err) throw err;
+
+            console.log("\n\nsessionController - Session updated: ", results);
+
+            cb(results);
+        });
     },
 
     // End a session
@@ -39,11 +52,12 @@ const sessionController = {
         connection.execute(queryString, 
         [cookieID, cookieIP],
         function(error, results, fields) {
-			if (error) throw error;
-            console.log("Session looked up: ", results[0]);
+            if (error) throw error;
+            
+            console.log("sessionController - Session looked up: ", results[0]);
+
             return cb(results[0]);
 		});
-		console.log("session cookie looked up");
     }
 };
 

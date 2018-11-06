@@ -5,6 +5,7 @@ const path = require("path");
 const mysql = require("mysql2");
 const cookieParser = require("cookie-parser");
 const crypto = require("crypto");
+const bcrypt = require("bcrypt");
 
 const ORM = require("./controllers/ORM.js");
 
@@ -63,7 +64,7 @@ app.use((req, res, next) => {
 		});
 	} else {
 		// Cookie found
-		console.log("\n\nCookie found: ", req.cookies);
+		//console.log("\n\nCookie found: ", req.cookies);
 
 		// Continue to the next module.
 		next();
@@ -77,7 +78,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
-const authTestData = require("./test-data/users/user-Beerus.js");
+// const authTestData = require("./test-data/users/user-Beerus.js");
 
 // Routes Handling
 // ------------------------------------------------
@@ -114,27 +115,57 @@ app.get("/", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-	if (req.query.auth) {
-		res.render("blocks/signup", authTestData);
-	} else {
-		res.render("blocks/signup", nonAuthTestData);
-	}
+	ORM.sessions.lookup(
+		req.cookies.gamersmeetup,
+		req.ip,
+		connection,
+		results => {
+			if (results.accountID) {
+				res.redirect("/dashboard");
+			} else {
+				res.render("blocks/signup");
+			}
+		}
+	);
 });
 
 app.get("/signin", (req, res) => {
-	if (req.query.auth) {
-		res.render("blocks/signin", authTestData);
-	} else {
-		res.render("blocks/signin", nonAuthTestData);
-	}
+	ORM.sessions.lookup(
+		req.cookies.gamersmeetup,
+		req.ip,
+		connection,
+		results => {
+			if (results.accountID) {
+				res.redirect("/dashboard");
+			} else {
+				res.render("blocks/signin");
+			}
+		}
+	);
 });
 
 app.get("/dashboard", (req, res) => {
-	if (req.query.auth) {
-		res.render("blocks/dashboard", authTestData);
-	} else {
-		res.render("blocks/dashboard", nonAuthTestData);
-	}
+	ORM.sessions.lookup(
+		req.cookies.gamersmeetup,
+		req.ip,
+		connection,
+		results => {
+			console.log("\n\nkbjsvbkjsdvbkjdsvkjb: ", results);
+			if (!results) {
+				res.redirect("/signup");
+			} else {
+				ORM.users.find(results.accountID, connection, results => {
+					console.log("\n\nGJDBSNVJGUHSODJBVHJSDIUOH: ", results);
+
+					const data = {};
+
+					data.user = results;
+
+					res.render("blocks/dashboard", data);
+				});
+			}
+		}
+	);
 });
 
 app.get("/user-profile/:userID", (req, res) => {
@@ -154,17 +185,130 @@ app.get("/group-profile/:groupID", (req, res) => {
 });
 // --------------------------------------------------
 
+// POST Routes
+// --------------------------------------------------
 app.post("/signup", function(req, res) {
-	console.log(req.body);
+	console.log("\n\n app.post /signup", req.body);
+	const { username, email, password, confirmPass } = req.body;
 
-	res.redirect("/dashboard");
+	// Check if there are missing fields
+	if (
+		username === "" ||
+		email === "" ||
+		password === "" ||
+		confirmPass === ""
+	) {
+		// If there are missing fields...
+
+		// Create an object with the errors.
+		const errObj = { message: "Some fields are blank." };
+
+		// re-render the sign up page with the errors passed in.
+		res.render("blocks/signup", errObj);
+	} else {
+		// If there are no missing fields...
+
+		// Check if the password and confirm pass are the same.
+		if (password !== confirmPass) {
+			// If the password and confirm pass do NOT match...
+
+			// Create an object with the errors.
+			const errObj = { message: "The password fields do not match." };
+
+			// re-render the sign up page with the errors passed in.
+			res.render("blocks/signup", errObj);
+		} else {
+			// If the password and confirm pass DO MATCH...
+
+			// Find the accounts to check if the account already exists.
+			ORM.accounts.find(username, email, connection, results => {
+				console.log(results);
+
+				// Check if the account exists.
+				if (results !== undefined) {
+					// If there ARE results
+					// (A matching account with the same username or email).
+
+					// Create an object with the errors.
+					const errObj = {
+						message: "The username or email already exists."
+					};
+
+					// re-render the sign up page with the errors passed in.
+					res.render("blocks/signup", errObj);
+				} else {
+					// If there NO matching accounts.
+
+					// Create an account.
+					ORM.accounts.create(
+						username,
+						email,
+						connection,
+						results => {
+							console.log(
+								"\n\n\nUSER account created: ",
+								results
+							);
+
+							// Create the hash.
+							bcrypt.hash(password, 10000, function(err, hash) {
+								if (err) throw err;
+
+								console.log("\n\n\nHASH: ", hash);
+
+								ORM.hash.create(
+									results.insertId,
+									10000,
+									hash,
+									connection,
+									results => {
+										console.log(
+											"\n\n\nHASH created: ",
+											results
+										);
+									}
+								);
+
+								ORM.sessions.update(
+									results.insertId,
+									req.cookies.gamersmeetup,
+									req.ip,
+									connection,
+									results => {
+										console.log(
+											"\n\nSession update: ",
+											results
+										);
+									}
+								);
+
+								ORM.users.create(
+									results.insertId,
+									username,
+									connection,
+									(results) => {
+										res.redirect("/dashboard")
+									}
+								);
+							});
+
+							//res.render("blocks/signup");
+						}
+					);
+				}
+			});
+		}
+	}
+
+	//res.redirect("/dashboard");
 });
 
 app.post("/signin", (req, res) => {
 	console.log(req.body);
 
-	res.redirect("/dashboard?auth=true");
+	res.redirect("/dashboard");
 });
+// ---------------------------------------------------
 
 // PORT
 app.listen(3000, function() {
