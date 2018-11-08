@@ -12,8 +12,8 @@ const hashController = {
             cb(results);
         });
     },
-    find: function(accountID,connection, cb) {
-        const queryString = "SELECT * FROM `users` WHERE `accountID`=?";
+    find: function(accountID, connection, cb) {
+        const queryString = "SELECT * FROM `hashes` WHERE `accountID`=?";
 
         connection.execute(queryString, [accountID], (err, results, fields) => {
             if (err) throw err;

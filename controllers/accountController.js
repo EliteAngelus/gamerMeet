@@ -14,7 +14,7 @@ const accountController = {
 
 	find: function(username, email, connection, cb) {
         const queryString = 
-            "SELECT `joinDate` FROM `userAccounts` WHERE `username`=? OR `email`=?";
+            "SELECT * FROM `userAccounts` WHERE `username`=? OR `email`=?";
 
         connection.execute(queryString, [username, email], (err, results, fields) => {
             if (err) throw err;

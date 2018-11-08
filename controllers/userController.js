@@ -13,6 +13,18 @@ const userController = {
         })
 
     },
+    updateLastActive: function (accountID, connection, cb) {
+        const queryString = 
+            "UPDATE `users` SET lastActive=NOW() WHERE `accountID`=?;"
+
+        connection.execute(queryString, [accountID], (err, results, fields) => {
+            if (err) throw err;
+
+            console.log("\n\nuserController - Updated Last Active: ", results);
+
+            cb(results);
+        })
+    },
     find: function(accountID,connection, cb) {
         const queryString = "SELECT * FROM `users` WHERE `accountID`=?";
 

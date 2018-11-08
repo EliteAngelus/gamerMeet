@@ -4,6 +4,9 @@ block content
     section#sign-in
         form.form-wrap(action="/signin", method="POST")
             h1 Sign In
+            if message
+                h5(style={color:'orangered'}) [ #{message} ]
+                br
             label(for="sign-in-username") Your Username
             input(
                 id="sign-in-username"
@@ -24,5 +27,5 @@ block content
 
             button(type="submit") Sign In
 
-            p Don't have an account? #[a(href="/signin") Sign Up]
+            p Don't have an account? #[a(href="/signup") Sign Up]
               
