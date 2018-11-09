@@ -4,6 +4,9 @@ block content
     section#sign-up
         form.form-wrap(action="/signup", method="POST")
             h1 Sign Up
+            if message
+                h5(style={color:'orangered'}) [ #{message} ]
+                br
             label(for="signup-username") Your Username
             input(
                 id="signup-username"
@@ -35,7 +38,7 @@ block content
             input(
                 id="signup-email"
                 type="text" 
-                name="Email" 
+                name="email" 
                 placeholder="Email" 
                 value="jDoe@mgail.com"
             )
@@ -53,7 +56,7 @@ block content
             input(
                 id="signup-confirm-password"
                 type="password" 
-                name="confirmpass" 
+                name="confirmPass" 
                 placeholder="Confirm Password" 
                 value="wordpass"
             )
