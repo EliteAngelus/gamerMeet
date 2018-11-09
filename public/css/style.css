@@ -1,7 +1,19 @@
 /* Font Imports */
 
-@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
-@import url("https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light");
+
+/* @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+@import url("https://fonts.googleapis.com/css?family=Acme|Shadows+Into+Light"); */
+
+@font-face {
+    font-family: "Shadows Into Light";
+    src: url("/fonts/shadows-into-light/ShadowsIntoLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Acme";
+    src: url("/fonts/acme-regular/Acme-Regular.ttf") format("truetype");
+}
+
 
 /* Color Palette */
 
@@ -49,7 +61,7 @@ body {
 }
 
 .background-primary {
-    background: #141B9F;
+    background: #141b9f;
     color: #091436;
 }
 
@@ -73,8 +85,8 @@ nav {
     font-family: "Shadows Into Light", cursive;
     text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
     box-shadow: 0px 0px 20px 0px #00000033;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -89,7 +101,7 @@ nav a {
 nav #logo {
     grid-column-start: 1;
     grid-column-end: 3;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
 }
 
 nav #menu {
@@ -115,8 +127,8 @@ nav #menu {
     color: white;
     padding: 0;
     text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
-    margin-top: -.5rem;
-    background: url(/img/TFH_Three_Swords.png) center/cover, linear-gradient( #d2c11f5c, #00000000);
+    margin-top: -0.5rem;
+    background: url(/img/TFH_Three_Swords.png) center/cover, linear-gradient(#d2c11f5c, #00000000);
     /* background-attachment: fixed; */
     text-align: center;
     display: grid;
@@ -132,7 +144,7 @@ nav #menu {
     grid-row-end: 4;
     margin: 0rem 0.4rem 0rem;
     padding: 0.7rem;
-    border: .2rem solid whitesmoke;
+    border: 0.2rem solid whitesmoke;
     background: #060047d4;
     z-index: 10;
 }
@@ -348,10 +360,10 @@ ul {
 
 .form-wrap input {
     width: 100%;
-    padding: .3rem;
+    padding: 0.3rem;
     box-sizing: border-box;
     margin: 0.2rem 0 0.8rem;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
 }
 
 .form-wrap button {
@@ -359,7 +371,7 @@ ul {
     color: white;
     font-size: 1rem;
     border: 0.1rem solid white;
-    margin: .8rem 0;
+    margin: 0.8rem 0;
     padding: 0.4rem 0;
     width: 100%;
     text-shadow: 1px 1px 20px black;
@@ -367,12 +379,12 @@ ul {
 }
 
 .form-wrap label {
-    font-size: .8rem;
+    font-size: 0.8rem;
     float: left;
 }
 
 .form-wrap h1 {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .form-wrap p {
@@ -386,9 +398,9 @@ ul {
 .form-wrap p a {
     color: white;
     text-decoration: none;
-    border: .2rem solid white;
-    padding: .2rem;
-    border-radius: .4rem;
+    border: 0.2rem solid white;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
     background: orangered;
 }
 
@@ -554,11 +566,11 @@ ul {
     display: block;
     background: url(/img/3px-tile.png), black;
     border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: .5rem;
+    border-bottom-right-radius: 0.5rem;
     border-top: 0.1rem solid;
-    border-bottom: .1rem solid;
-    border-right: .1rem solid;
-    padding: .2rem;
+    border-bottom: 0.1rem solid;
+    border-right: 0.1rem solid;
+    padding: 0.2rem;
 }
 
 #friend-activity {
@@ -571,7 +583,7 @@ ul {
     grid-column-start: 1;
     grid-column-end: 4;
     text-shadow: 0px 0px 20px black, 0px 0px 20px black;
-    padding: .5rem;
+    padding: 0.5rem;
     border: 0.3rem solid #00000042;
     border-bottom: none;
     background: #0024ff1a;
@@ -583,7 +595,7 @@ ul {
     grid-column-start: 1;
     grid-column-end: 4;
     text-shadow: 0px 0px 20px black, 0px 0px 20px black;
-    padding: .5rem;
+    padding: 0.5rem;
     border: 0.3rem solid #00000042;
     background: #0024ff1a;
 }
@@ -594,7 +606,7 @@ ul {
 }
 
 .dashboard-card p {
-    padding: 0.4rem .4rem 0;
+    padding: 0.4rem 0.4rem 0;
 }
 
 .dashboard-card p:last-child {
@@ -627,7 +639,7 @@ ul {
 #account-options p {
     text-align: center;
     padding: 0.7rem;
-    border: .4rem solid #00000042;
+    border: 0.4rem solid #00000042;
     background: #0024ff1a;
     color: white;
 }
@@ -663,17 +675,17 @@ ul {
     text-align: center;
     background: url(/img/3px-tile.png), black;
     border-top: 0.1rem solid;
-    border-bottom: .1rem solid;
+    border-bottom: 0.1rem solid;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    padding: .2rem;
+    padding: 0.2rem;
 }
 
 .user-card p {
     grid-column-start: 1;
     grid-column-end: 4;
-    border: .5rem solid #00000042;
-    padding: .5rem;
+    border: 0.5rem solid #00000042;
+    padding: 0.5rem;
     text-align: center;
     background: #0024ff1a;
 }
@@ -697,8 +709,8 @@ ul {
 .user-stats p {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
     border-bottom: none;
     background: #0024ff1a;
 }
@@ -715,8 +727,8 @@ ul {
 .user-stats p:last-child {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
     background: #0024ff1a;
 }
 
@@ -756,7 +768,7 @@ ul {
     grid-column-end: 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
 }
 
 .group-banner img {
@@ -771,18 +783,18 @@ ul {
     text-align: center;
     background: url(/img/3px-tile.png), black;
     border-top: 0.1rem solid;
-    border-bottom: .1rem solid;
+    border-bottom: 0.1rem solid;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    padding: .2rem;
+    padding: 0.2rem;
     margin-top: -0.5rem;
 }
 
 .group-banner p {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
     background: #0024ff1a;
     text-align: center;
 }
@@ -807,8 +819,8 @@ ul {
 .group-stats p:last-child {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
     background: #0024ff1a;
 }
 
@@ -828,18 +840,18 @@ ul {
     grid-column-end: 4;
     background: url(/img/3px-tile.png), black;
     border-top: 0.1rem solid;
-    border-bottom: .1rem solid;
+    border-bottom: 0.1rem solid;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    padding: .2rem;
+    padding: 0.2rem;
     text-decoration: underline;
 }
 
 .group-stats p {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
     border-bottom: none;
     background: #0024ff1a;
 }
@@ -851,8 +863,8 @@ ul {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto;
     background: #0024ff1a;
-    padding: .5rem;
-    border: .5rem solid #00000042;
+    padding: 0.5rem;
+    border: 0.5rem solid #00000042;
 }
 
 .member-card p {
@@ -867,7 +879,7 @@ ul {
 .group-stats p:last-child.browse-more {
     grid-column-start: 1;
     grid-column-end: 4;
-    padding: .5rem;
+    padding: 0.5rem;
     border: none;
     background: none;
     text-align: right;
@@ -896,8 +908,8 @@ ul {
 
 footer {
     box-shadow: 0px 0px 20px -2px #00000033;
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 footer .footer-cols {

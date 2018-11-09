@@ -3,26 +3,35 @@ extends ../template
 block content
     section#dashboard
         h3.dashboard-title #{user.username}
-        - var userProfileImage = user.profileImageLocation + user.profileImage
-        img(src= userProfileImage)
+        if user.profileImage
+            - var userProfileImage = user.profileImageLocation + user.profileImage
+            img(src= userProfileImage)
+        else
+            img(src= '/img/test-profile-pic.png')
 
     section#friend-activity
         h4.dashboard-title Latest from your friends
-        each friend in user.friends
-            - var userURL = "/user-profile/" + friend.id + "?auth=true"
-            a(href= userURL).dashboard-card
-                h5 #{friend.name}
-                p #{friend.latestMessages[0].message}
-                p: i #{friend.latestMessages[0].timestamp}
+        if user.friends
+            each friend in user.friends
+                - var userURL = "/user-profile/" + friend.id + "?auth=true"
+                a(href= userURL).dashboard-card
+                    h5 #{friend.name}
+                    p #{friend.latestMessages[0].message}
+                    p: i #{friend.latestMessages[0].timestamp}
+        else
+            p Start adding friends
 
     section#group-activity
         h4.dashboard-title Latest from your groups
-        each group in user.groups
-            - var groupURL = "/group-profile/" + group.id + "?auth=true"
-            a(href= groupURL).dashboard-card
-                h5 #{group.name}
-                p #{group.latestNews[0].message}
-                p: i #{group.latestNews[0].timestamp}
+        if user.groups
+            each group in user.groups
+                - var groupURL = "/group-profile/" + group.id + "?auth=true"
+                a(href= groupURL).dashboard-card
+                    h5 #{group.name}
+                    p #{group.latestNews[0].message}
+                    p: i #{group.latestNews[0].timestamp}
+        else
+            p Look for some groups
 
     section#account-options
             h5.dashboard-title Account Options
