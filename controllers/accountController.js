@@ -1,5 +1,7 @@
+const connection = require("./../config/connection.js");
+
 const accountController = {
-	create: function(username, email, connection, cb) {
+	create: function(username, email, cb) {
 		const queryString =
             "INSERT INTO `userAccounts` (username, joinDate, email)" 
             +" VALUES (?,NOW(),?);";
@@ -12,7 +14,7 @@ const accountController = {
         })
 	},
 
-	find: function(username, email, connection, cb) {
+	find: function(username, email, cb) {
         const queryString = 
             "SELECT * FROM `userAccounts` WHERE `username`=? OR `email`=?";
 

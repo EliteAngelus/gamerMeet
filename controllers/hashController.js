@@ -1,5 +1,7 @@
+const connection = require("./../config/connection.js");
+
 const hashController = {
-    create: function(accountID, iterations, hash, connection, cb) {
+    create: function(accountID, iterations, hash, cb) {
         const queryString = 
             "INSERT INTO `hashes` (accountID, iterations, hash) " +
             "VALUES (?, ?, ?);"
@@ -12,7 +14,7 @@ const hashController = {
             cb(results);
         });
     },
-    find: function(accountID, connection, cb) {
+    find: function(accountID, cb) {
         const queryString = "SELECT * FROM `hashes` WHERE `accountID`=?";
 
         connection.execute(queryString, [accountID], (err, results, fields) => {

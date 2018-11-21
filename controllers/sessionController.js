@@ -1,6 +1,8 @@
+const connection = require("./../config/connection.js");
+
 const sessionController = {
     // Create a session and store the connections cookieID and cookieIP.
-	create: function(cookieID, cookieIP, connection, cb) {
+	create: function(cookieID, cookieIP, cb) {
 		connection.execute(
             "INSERT INTO `sessions` (cookieID, cookieIP, lastActive) VALUES(?, ?, NOW())", 
             [cookieID, cookieIP],
@@ -14,7 +16,7 @@ const sessionController = {
 	},
 
     // Refresh a cookie's last active time
-	refresh: function(accountID, cookieID, connection) {
+	refresh: function(accountID, cookieID) {
         connection.execute("UPDATE `sessions` SET accountID=?, sessionCreated=NOW() WHERE cookieID=?", 
         [accountID, cookieID],
         function(error, results, fields) {
@@ -25,7 +27,7 @@ const sessionController = {
     },
     
     // Update a session with an accountID
-    update: function(accountID, cookieID, cookieIP, connection, cb) {
+    update: function(accountID, cookieID, cookieIP, cb) {
         const queryString = 
             "UPDATE `sessions` SET `accountID`=? WHERE `cookieID`=? AND " +
             "`cookieIP`=?;"
@@ -46,7 +48,7 @@ const sessionController = {
     delete: function() {},
     
     // Get the data linked to a cookie.
-    lookup: function(cookieID, cookieIP, connection, cb) {
+    lookup: function(cookieID, cookieIP, cb) {
         let queryString = "SELECT * FROM `sessions` WHERE `cookieID`=? AND `cookieIP`=?";
         
         connection.execute(queryString, 

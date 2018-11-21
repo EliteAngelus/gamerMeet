@@ -1,5 +1,7 @@
+const connection = require("./../config/connection.js");
+
 const userController = {
-    create: function(accountID, username, connection, cb) {
+    create: function(accountID, username, cb) {
         const queryString = 
             "INSERT INTO `users` (accountID, username, joinDate, lastActive)" + 
             "VALUES (?, ?, NOW(), NOW());"
@@ -13,7 +15,7 @@ const userController = {
         })
 
     },
-    updateLastActive: function (accountID, connection, cb) {
+    updateLastActive: function (accountID, cb) {
         const queryString = 
             "UPDATE `users` SET lastActive=NOW() WHERE `accountID`=?;"
 
@@ -25,7 +27,7 @@ const userController = {
             cb(results);
         })
     },
-    find: function(accountID,connection, cb) {
+    find: function(accountID, cb) {
         const queryString = "SELECT * FROM `users` WHERE `accountID`=?";
 
         connection.execute(queryString, [accountID], (err, results, fields) => {
@@ -33,6 +35,16 @@ const userController = {
             console.log("\n\nuserController - User Found: ", results);
             cb(results[0]);
         })
+    },
+    addFriend: function (userID, friendObj, cb) {
+        const queryString = "UPDATE `users` SET friends=? WHERE `userID`=?";
+
+        connection.execute(queryString, [friendObj, userID], (err, results, fields) => {
+            if (err) throw err;
+
+            console.log("\n\nuserController - Add Friend: ", results);
+            cb(results);
+        });
     }
 }
 
